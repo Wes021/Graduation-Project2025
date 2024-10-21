@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../nxm_logo.jpg"/>
+    <link rel="stylesheet" href="../styles/allPhotographer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../styles/navbar-footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Photographers</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header></header>
+ 
+<!-- main div -->
+    <div id="parent_div">
+        <div class="category">
+           <h2>Categories By Location</h2>
+           <ul>
+            <li id="Default">Default</li>
+            <li id="Delhi">amman</li>
+            <li id="Chennai">irbid</li>
+            <li id="Jalgaon">ajloun</li>
+            <li id="Pune">aqaba</li>
+            <li id="Kolkata">karak</li>
+           </ul>
+           <h2 class="sort_head">Sort By Booking Charges</h2>
+           <select name="" id="sort">
+            <option value="0">Sort By Booking Charges</option>
+            <option value="1">Low to High</option>
+            <option value="-1">High to Low</option>
+        </select>
+        </div>
+        
+        <div id="main_div">
+            <div>
+                <div class="profile_img">
+                    <img class="p_img"
+                        src="https://d3btuubl2bvm9d.cloudfront.net/images/27e889ce3d8a11e484950e2f866a9102/1528532910837-mid.jpg"
+                        alt="">
+                </div>
+                <div>
+                    <h2 class="head">ahmad</h2>
+                    <h3 class="dark">jordan,amman</h3>
+                    <h3 class="dark">0799900213</h3>
+                    <h4>Booking Charges :80jd</h4>
+                    <h4 class="hour">Working Hours :</h4>
+                    <button class="profile_btn">Wedding</button>
+                    <button class="profile_btn">babies</button>
+                    <button class="profile_btn">birthday</button>
+                    <button class="profile_btn">party</button>
+                    <button class="profile_btn">events</button>
+                    <br>
+                    <button id="back_btn" class="see_btn">Go Back</button>
+                    <button class="see_btn">See Profile</button>
+
+
+                </div>
+            </div> 
+
+
+            <!-- 2nd -->
+             <div>
+                <div class="profile_img">
+                    <img class="p_img"
+                        src="https://d3btuubl2bvm9d.cloudfront.net/images/27e889ce3d8a11e484950e2f866a9102/1528810387519-mid.jpg"
+                        alt="">
+                </div>
+                <div>
+                    <h2 class="head">mahmoud</h2>
+                    <h3 class="dark">jordan,irbid</h3>
+                    <h3 class="dark">0799900212</h3>
+                    <h4>Booking Charges :120jd</h4>
+                    <h4 class="hour">Working Hours :</h4>
+                    <button class="profile_btn">Wedding</button>
+                    <button class="profile_btn">babies</button>
+                    <button class="profile_btn">birthday</button>
+                    <button class="profile_btn">party</button>
+                    <button class="profile_btn">events</button>
+                    <br>
+                    <button id="back_btn" class="see_btn">Go Back</button>
+                    <button class="see_btn">See Profile</button>
+
+
+                </div>
+            </div> 
+
+            <!-- 3rd -->
+             <div>
+                <div class="profile_img">
+                    <img class="p_img"
+                        src="https://d3btuubl2bvm9d.cloudfront.net/images/27e889ce3d8a11e484950e2f866a9102/1444647718668-mid.jpg"
+                        alt="">
+                </div>
+                <div>
+                    <h2 class="head">wesam </h2>
+                    <h3 class="dark">jordan,aqaba</h3>
+                    <h3 class="dark">0799900223</h3>
+                    <h4>Booking Charges :50jd</h4>
+                    <h4 class="hour">Working Hours :</h4>
+                    <button class="profile_btn">Wedding</button>
+                    <button class="profile_btn">babies</button>
+                    <button class="profile_btn">birthday</button>
+                    <button class="profile_btn">party</button>
+                    <button class="profile_btn">events</button>
+                    <br>
+                    <button id="back_btn" class="see_btn">Go Back</button>
+                    <button class="see_btn">See Profile</button>
+
+
+                </div>
+            </div> 
+
+
+
+        </div>
+        
+
+    </div>
+ <!------------------- footer part  ------------>
+ <div class="footer">
+    <p id="ftext">Strike a Pose </p>
+    <div>
+        <div>
+            <p>Company</p>
+            <li>Blog
+            </li>
+            <li>About Us
+            </li>
+            <li>Contact Us</li>
+            <li>Cities</li>
+            
+        </div>
+        <div>
+            <p>Legal</p>
+            <li>Terms Of Service
+            </li>
+            <li>Privacy Policy
+            </li>
+            <li>Content Guidelines</li>
+            <li>Community Guidelines</li>
+            <li>3rd Party licenses</li>
+            
+        </div>
+    </div>
+    <hr>
+    <p>
+        Icons made by Freepik from www.flaticon.com And
+        </p>
+        <hr>
+        <p>
+            © Copyright 2023 Strike a Pose Technologies Pvt. Ltd. All rights reserved. | 
+            Terms Of Service | 
+            Privacy Policy
+            </p>
+</div>
+
+
+
+
+
+</body>
+
+</html>
+<script>
+    // <!------------------- navigation bar code ------------>
+let navbar=document.querySelector(".nav")
+   
+   window.onscroll=function(){
+       navbar.classList.add("sticky");
+   }
+// <!------------------- navigation bar code ------------>
+</script>
+
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/allPhotographer.js"></script>
