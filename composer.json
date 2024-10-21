@@ -1,0 +1,14 @@
+{
+    "name": "graduation-project2025/gp-app",
+    "description": "A Laravel application for managing graduation projects.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wes021",
+            "email": "122152471+Wes021@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
