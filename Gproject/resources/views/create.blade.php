@@ -43,18 +43,26 @@
               >
             </div>
   
-            <form action="">
+            <form action="{{ route('customers.store') }}" method="POST">
+              @csrf
               <p>Fullname</p>
-              <input id="name" type="text" required />
+              <input id="name" type="text" name="name" required />
+
+              <p>username</p>
+              <input id="username" type="text" name="username" required />
+
             <p>Phone Number</p>
-            <input id="mobile" type="text" required />
-            <p>Email</p>
-            <input id="email" type="text" required />
+            <input id="phone" type="text" name="phone" required />
           
             <p>Password</p>
-            <input id="password" type="password" required />
+            <input id="password" type="text" name="password" required />
   
+            <p>address</p>
+            <input type="text" id="address" name="address" required />
+
               <p class="body">Stay signed in for 30 days</p>
+            
+              
             <p>
               By creating an account, I agree to the Terms and Privacy Policy.
             </p>

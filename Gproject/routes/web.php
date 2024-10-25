@@ -6,8 +6,14 @@ use App\Http\Controllers\CustomerController;
 
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
+
+// Route::get('/test', function() {
+//     return view('index');
+// });
+
+Route::resource('customers', CustomerController::class);
 
 
 
