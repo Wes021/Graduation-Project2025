@@ -1,16 +1,13 @@
 <?php
 
+use App\Models\customer;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
+
 
 Route::get('/', function () {
     return view('index');
 });
 
 
-// Show the form to create a user
-Route::get('/users/create', function () {
-    return view('users.create');
-});
 
-// Store the new user
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
