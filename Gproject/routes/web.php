@@ -15,5 +15,9 @@ Route::get('/', function () {
 
 Route::resource('customers', CustomerController::class);
 
+Route::get('/main', function () {
+    return view('main'); // Assuming you have a view named 'main.blade.php'
+})->name('main');
+
 
 

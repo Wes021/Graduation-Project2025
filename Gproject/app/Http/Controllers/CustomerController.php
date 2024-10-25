@@ -44,7 +44,7 @@ class CustomerController extends Controller
         $customer->address=$validateData['address'];
         $customer->save();
 
-        //return redirect()->route();
+        return redirect()->route('customers.index')->with('success', 'Customer created successfully.');
 
     }
 
