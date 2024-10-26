@@ -20,7 +20,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('signup');
     }
 
     /**
