@@ -6,7 +6,7 @@ use App\Http\Controllers\CustomerController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 // Route::get('/test', function() {
@@ -15,9 +15,9 @@ Route::get('/', function () {
 
 Route::resource('customers', CustomerController::class);
 
-Route::get('/main', function () {
-    return view('main');
-})->name('main');
+// Route::get('/main', function () {
+//     return view('main');
+// })->name('main');
 
 
 
