@@ -15,9 +15,9 @@ Route::get('/', function () {
 
 Route::resource('customers', CustomerController::class);
 
-// Route::get('/main', function () {
-//     return view('main');
-// })->name('main');
+Route::get('/signin', function () {
+    return view('signin');
+});
 
 
 
