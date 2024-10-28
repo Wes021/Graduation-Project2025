@@ -8,6 +8,7 @@ class Customer extends Model
 {
     public $timestamps = false;
     protected $table='user';
+    private $user_Id;
     private $name;
     private $username;
     private $password;

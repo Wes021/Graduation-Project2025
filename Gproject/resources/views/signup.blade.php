@@ -46,7 +46,7 @@
             <div>
               <span class="head">Create Account</span>
               <span class="body">
-                <a href="login.html"> Sign In </a>instead?</span
+                <a href="{{ route('signin')}}"> Sign In </a>instead?</span
               >
             </div>
   

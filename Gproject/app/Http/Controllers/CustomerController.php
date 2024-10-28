@@ -44,7 +44,7 @@ class CustomerController extends Controller
         $customer->address=$validateData['address'];
         $customer->save();
 
-        return redirect()->route('customers.index')->with('success', 'Customer created successfully.');
+        return redirect()->route('signin');
 
     }
 
@@ -80,8 +80,8 @@ class CustomerController extends Controller
         //
     }
 
-    public function signin()
-    {
-        
-    }
+    // public function signin()
+    // {
+    //     return view('signin');
+    // }
 }

@@ -51,7 +51,7 @@
           <span class="body">
             <a href="{{ route('customers.create') }}"> Create Account </a>instead?</span>
         </div>
-        <form action="">
+        <form action="{{ route('customers.store') }}" method="POST">
              <p>Phone Number</p>
             <input id="mobile" type="text" required />
 

@@ -6,6 +6,9 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use app\Models\Customer;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class userSignin
 {
@@ -16,6 +19,13 @@ class userSignin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if (Auth::check()) {
+            $userId = Auth::id();
+
+            // Check if the user exists in the database
+            if (Customer::find($userId)) {
+                return $next($request);
+            }
+        }
     }
 }
