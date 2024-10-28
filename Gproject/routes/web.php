@@ -20,4 +20,4 @@ Route::get('/process', function(){
 
 
 
-Route::get('/signin',[AuthController::class,'signin'])->name('signin')->middleware('userSignup');
+Route::get('/signin',[AuthController::class,'signin'])->name('signin')->middleware('userSignin');
