@@ -97,7 +97,7 @@
         <p id="stext">Get inspired to create your own beautiful moments!</p>
 
 
-        <div class="cate">
+        <div onclick="openGalleryPage()" class="cate">
             <div>
                 <div>
                 <p id="btext">Holiday</p>
@@ -364,6 +364,10 @@
      window.location="./HTML/individualpage.html"
    }
 
-   document.querySelector(".cate").addEventListener("click",openStudioPage)
+   function openGalleryPage(){
+        window.location="./HTML/gallery.html"
+   }
+
+   document.querySelector(".cate").addEventListener("click",openGalleryPage)
 </script>
 
