@@ -50,29 +50,22 @@
           <span class="head"> Sign In</span>
           <span class="body">
             <a href="{{ route('customers.create') }}"> Create Account </a>instead?</span>
+
         </div>
-        <form action="{{ route('customers.store') }}" method="POST">
-             <p>Phone Number</p>
-            <input id="mobile" type="text" required />
-
-            <p>Password</p>
-            <input id="password" type="password" required />
-
-            <p>Login As</p>
-            <select name="role" id="role">
-              <option value="users">User</option>
-              <option value="studios">Studio</option>
-        
-            </select>
-          <div class="lastline">
-          <p class="body">Stay signed in for 30 days</p>
-          <a href="">forgot password?</a>
-        </div>
-
-        <input type="submit" class="btn" value="Sign in"></input>
-
-        </form>
-        
+        <form action="{{ route('login') }}" method="POST">
+          @csrf
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+          <br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <br>
+          <input type="submit" class="btn" value="Sign in"></input>
+      </form>
+  
+      @if (session('error'))
+          <p style="color:red;">{{ session('error') }}</p>
+      @endif      
      
      
       </div>
@@ -123,5 +116,5 @@
 
 
 <script src="frontend/scripts/navbar.js"></script>
-<script src="frontend/scripts/login.js"></script>
+{{-- <script src="frontend/scripts/login.js"></script> --}}
 

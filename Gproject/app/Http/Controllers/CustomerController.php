@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use Exception;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -35,7 +36,7 @@ class CustomerController extends Controller
             'phone'=> 'required|string|max:255|unique:user,phone',
             'address'=>'required|string|max:255'
         ]);
-
+        try{
         $customer =new Customer();
         $customer->name=$validateData['name'];
         $customer->username=$validateData['username'];
@@ -45,6 +46,9 @@ class CustomerController extends Controller
         $customer->save();
 
         return redirect()->route('signin');
+        } catch(Exception $e){
+            return redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
+        }
 
     }
 

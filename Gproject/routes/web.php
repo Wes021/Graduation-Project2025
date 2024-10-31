@@ -6,18 +6,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 
 
-
-
-// Route::get('/test', function() {
-//     return view('index');
-// });
-
+/////////CustomerController/////////
 Route::resource('customers', CustomerController::class);
-
-Route::get('/process', function(){
-    return view('welcome');
-})->name('signed')->middleware('userSignin');
+/////////CustomerController/////////
 
 
+/////////AuthController/////////
+Route::get('/signin',[AuthController::class,'signinIndex'])->name('signin');
 
-Route::get('/signin',[AuthController::class,'signin'])->name('signin')->middleware('userSignin');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+/////////AuthController/////////
+
+
+
+Route::get('/main', function () {
+    return view('main'); // Replace with your actual main view
+})->name('main');
