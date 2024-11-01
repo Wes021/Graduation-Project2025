@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Sign In</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Sign in</title>
     <link rel="stylesheet" href="{{ asset('frontend/styles/login.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/styles/navbar-footer.css') }}">
-   
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    
-  </head>
-  <body>
-  <!------------------- navigation bar start ------------>
+</head>
+<body>
     <header>    
         <nav>
           <div class="logo">
@@ -27,8 +22,8 @@
           </div>
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
+
+            
           </ul>
         </nav>
     </header>
@@ -45,12 +40,11 @@
 
       <div class="part">
         <div>
-          <span class="head"> Sign In as user</span>
-          <span class="body">
-            <a href="{{ route('customers.create') }}"> Create Account </a>instead?</span>
+          <span class="head"> Sign In as an employee</span>
+          
 
         </div>
-        <form action="{{ route('login') }}" method="POST">
+        <form action="{{ route('Adminloginproccss') }}" method="POST">
           @csrf
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required>
@@ -60,10 +54,7 @@
           <br>
           <input type="submit" class="btn" value="Sign in"></input>
       </form>
-      <span class="body">
-       Employee? press <a href="{{ route('AdminSignin') }}"> here </a></span>
-
-
+  
       @if (session('error'))
           <p style="color:red;">{{ session('error') }}</p>
       @endif      
@@ -110,12 +101,7 @@
                 Privacy Policy
                 </p>
     </div>
-
-
-  </body>
+</body>
 </html>
 
-
 <script src="frontend/scripts/navbar.js"></script>
-{{-- <script src="frontend/scripts/login.js"></script> --}}
-

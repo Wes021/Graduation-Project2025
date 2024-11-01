@@ -15,6 +15,10 @@ Route::resource('customers', CustomerController::class);
 Route::get('/signin',[AuthController::class,'signinIndex'])->name('signin');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::get('/AdminSignin', [AuthController::class, 'AdminSigninIndex'])->name('AdminSignin');
+
+Route::post('/Adminloginproccss', [AuthController::class, 'AdminSignin'])->name('Adminloginproccss');
 /////////AuthController/////////
 
 

@@ -35,9 +35,30 @@ class AuthController extends Controller
             return redirect()->back()->with('error', 'Invalid ');
         }
 
-        
-        
+    }
 
+    public function AdminSigninIndex()
+    {
+        return view('signinAdmin');
+    }
+
+    public function AdminSignin(Request $request)
+    {
+        $request->validate([
+            'username'=>'required|string',
+            'password'=>'required|string'
+        ]);
+
+        $userName=$request->input('username');
+        $Password=$request->input('password');
+
+        $admin=DB::table('employees')->where('username',$userName)->first();
+
+        if($admin && $admin->password===$Password){
+            return redirect()->route('main');
+        } else{
+            return redirect()->back()->with('error', 'wrong input');
+        }
     }
     
 }
