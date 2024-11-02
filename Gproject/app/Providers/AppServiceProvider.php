@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,8 +20,12 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        //
+        if(Session::has('Cuser')){
+            $user=Session::get('Cuser');
+            View::share('user',$user);
+        }
+
     }
 }

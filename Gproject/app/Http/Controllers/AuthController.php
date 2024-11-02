@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer; // Assuming this is your model for the customers table
-
+use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -28,14 +28,33 @@ class AuthController extends Controller
         $password=$request->input('password');
 
         $user=DB::table('user')->where('username', $username)->first();
+    
 
         if($user && $user->password===$password){
-            return redirect()->route('main');
+        //    session([
+        //     $userId=$user->id;
+        //     $usermainname=$user->name;
+        //     $userphone=$user->phone;
+        //     $useraddress=$user->address;
+        //    ]);
+
+            $request->session()->put('Cuser', [
+            $userId=$user->user_id,
+            $usermainname=$user->name,
+            $userphone=$user->phone,
+            $useraddress=$user->address,
+        ]);
+
+
+            return redirect()->route('getinfo');
         }else{
             return redirect()->back()->with('error', 'Invalid ');
         }
 
     }
+
+
+
 
     public function AdminSigninIndex()
     {
@@ -52,13 +71,28 @@ class AuthController extends Controller
         $userName=$request->input('username');
         $Password=$request->input('password');
 
+
         $admin=DB::table('employees')->where('username',$userName)->first();
 
         if($admin && $admin->password===$Password){
-            return redirect()->route('main');
+            $request->session()->put('user', $request->input('username'));
+            return redirect()->route('getinfo');
         } else{
             return redirect()->back()->with('error', 'wrong input');
         }
+
+        $request->session()->put('user', $request->input('username'));  
+         
+    }
+
+    public function displayinfo(Request $request){
+        
+        
+        return view('userProfile');
+        
+        
+
+        
     }
     
 }

@@ -19,10 +19,12 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/AdminSignin', [AuthController::class, 'AdminSigninIndex'])->name('AdminSignin');
 
 Route::post('/Adminloginproccss', [AuthController::class, 'AdminSignin'])->name('Adminloginproccss');
+
+Route::get('/getinfo',[AuthController::class,'displayinfo'])->name('getinfo');
 /////////AuthController/////////
 
 
 
-Route::get('/main', function () {
-    return view('main'); // Replace with your actual main view
-})->name('main');
+Route::get('/profile', function () {
+    return view('userProfile'); // Replace with your actual main view
+})->name('profile');
