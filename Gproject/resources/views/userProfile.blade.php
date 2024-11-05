@@ -29,14 +29,17 @@
       <div class="main">
         <div class="profile-maindiv">
           <div class="profile-child-div">
-            @if($user)
-            <p>User ID: {{ $user['id'] }}</p>
-            <p>Email: {{ $user['email'] }}</p>
-            <p>Account Created At: {{ $user['created_at'] }}</p>
-            <p>Last Updated At: {{ $user['updated_at'] }}</p>
-        @else
-            <p>No user data available.</p>
-        @endif
+           
+            @if(isset($userData))
+    <p>User ID: {{ $userData[0] }}</p>
+    <p>Name: {{ $userData[1] }}</p>
+    <p>Phone: {{ $userData[2] }}</p>
+    <p>Address: {{ $userData[3] }}</p>
+@else
+    <p>No user data available.</p>
+@endif
+       
+        
           </div>
           <div class="profile-other-info">
             <div class="profile-other-info-1">

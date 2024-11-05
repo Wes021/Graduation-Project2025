@@ -22,10 +22,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if(Session::has('Cuser')){
-            $user=Session::get('Cuser');
-            View::share('user',$user);
-        }
+        $user = Session::get('Cuser', null);
+
+        // Share 'user' with all views
+        View::share('user', $user);
 
     }
 }

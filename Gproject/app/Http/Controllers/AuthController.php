@@ -87,12 +87,18 @@ class AuthController extends Controller
 
     public function displayinfo(Request $request){
         
-        
-        return view('userProfile');
-        
+        // Check if 'Cuser' exists in the session
+    if (session()->has('Cuser')) {
+        $userData = session('Cuser'); // Retrieve the 'Cuser' array
+        return view('userProfile', ['userData' => $userData]);
+    } else {
+        return redirect('/login')->withErrors('Session data not found.');
+    }
+}
+
         
 
         
     }
     
-}
+
