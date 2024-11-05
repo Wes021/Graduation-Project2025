@@ -19,7 +19,7 @@
           <li><a href="../studio/albums.html"><span class="material-symbols-outlined"> photo_library </span>Albums</a></li>
           <li><a href="../studio/apointments.html"><span class="material-symbols-outlined"> beenhere </span>Appointments</a></li>
 
-          <li  onclick="logout()"><a href={{route('UserLogout')}}><span class="material-symbols-outlined"> logout </span>Logout</a></li>
+          <li  onclick="logout()"><a href="{{route('AdminLogOut')}}"><span class="material-symbols-outlined"> logout </span>Logout</a></li>
 
         </ul>
       </div>
@@ -30,15 +30,14 @@
         <div class="profile-maindiv">
           <div class="profile-child-div">
            
-            @if(isset($userData))
-    <p>User ID: {{ $userData[0] }}</p>
-    <p>Name: {{ $userData[1] }}</p>
-    <p>Phone: {{ $userData[2] }}</p>
-    <p>Address: {{ $userData[3] }}</p>
-@else
-    <p>No user data available.</p>
-@endif
-       
+            @if(isset($admindata))
+            <p>User ID: {{ $admindata[0] }}</p>
+            <p>Name: {{ $admindata[1] }}</p>
+            <p>Phone: {{ $admindata[2] }}</p>
+            <p>Address:N/A</p>
+        @else
+            <p>No user data available.</p>
+        @endif
         
           </div>
           <div class="profile-other-info">

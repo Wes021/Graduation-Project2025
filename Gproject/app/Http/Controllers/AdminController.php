@@ -34,14 +34,38 @@ class AdminController extends Controller
         $admin=DB::table('employees')->where('username',$userName)->first();
 
         if($admin && $admin->password===$Password){
-            $request->session()->put('user', $request->input('username'));
-            return  redirect()->back()->with('good', 'Invalid ');
+            
+            $request->session()->put('Auser',[
+                $adminid=$admin->employee_id,
+                $adminName=$admin->name,
+                $adminPhone=$admin->phone
+            ]);
+
+            return redirect()->route('AdminProfile');
+
         } else{
             return redirect()->back()->with('error', 'wrong input');
         }
 
-        $request->session()->put('user', $request->input('username'));  
+          
          
+    }
+
+    public function adminprofile(Request $request){
+        
+        if(session()->has('Auser')){
+            $admindata=session('Auser');
+            return view('AdminProfile',['admindata'=>$admindata]);
+        } else{
+            return redirect()->route('AdminSignin')->withErrors('Session data not found.');
+        }
+
+    }
+
+    public function adminLogout(Request $request){
+        $request->session()->forget('Auser');
+
+        return redirect()->route('AdminSignin')->with('success', 'Logged out successfully');
     }
 
         
@@ -49,4 +73,3 @@ class AdminController extends Controller
         
     }
     
-
