@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer; // Assuming this is your model for the customers table
+use App\Models\Customer; 
 use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class AuthController extends Controller
 {
     public function signinIndex()
     {
-        return view('signin'); // The view for your sign-in page
+        return view('signin'); 
     }
 
     public function login(Request $request){
@@ -87,9 +87,9 @@ class AuthController extends Controller
 
     public function displayinfo(Request $request){
         
-        // Check if 'Cuser' exists in the session
+        
     if (session()->has('Cuser')) {
-        $userData = session('Cuser'); // Retrieve the 'Cuser' array
+        $userData = session('Cuser'); 
         return view('userProfile', ['userData' => $userData]);
     } else {
         return redirect('/login')->withErrors('Session data not found.');

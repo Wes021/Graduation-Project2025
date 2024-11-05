@@ -26,5 +26,5 @@ Route::get('/getinfo',[AuthController::class,'displayinfo'])->name('getinfo');
 
 
 Route::get('/profile', function () {
-    return view('userProfile'); // Replace with your actual main view
+    return view('userProfile'); 
 })->name('profile');
