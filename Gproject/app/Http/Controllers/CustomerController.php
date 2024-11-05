@@ -5,30 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
+    public function Index(){
         return view('signup');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
+
+    public function SignUpUser(Request $request){
         $validateData=$request->validate([
             'name' =>  'required|string|max:255',
             'username'=> 'required|string|max:255|unique:user,username',
@@ -45,47 +32,60 @@ class CustomerController extends Controller
         $customer->address=$validateData['address'];
         $customer->save();
 
-        return redirect()->route('signin');
+        return redirect()->route('usersignin');
         } catch(Exception $e){
             return redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
         }
-
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function UsersigninIndex()
     {
-        //
+        return view('signin'); 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+    public function Usersignin(Request $request){
+        $request->validate([
+            'username'=>'required|string',
+            'password'=>'required|string'   
+        ]);
+
+        $username=$request->input('username');
+        $password=$request->input('password');
+
+        $user=DB::table('user')->where('username', $username)->first();
+    
+
+        if($user && $user->password===$password){
+        //    session([
+        //     $userId=$user->id;
+        //     $usermainname=$user->name;
+        //     $userphone=$user->phone;
+        //     $useraddress=$user->address;
+        //    ]);
+
+            $request->session()->put('Cuser', [
+            $userId=$user->user_id,
+            $usermainname=$user->name,
+            $userphone=$user->phone,
+            $useraddress=$user->address,
+        ]);
+
+
+            return redirect()->route('UserProfile');
+        }else{
+            return redirect()->back()->with('error', 'Invalid ');
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function userprofile(Request $request){
+        
+        
+        if (session()->has('Cuser')) {
+            $userData = session('Cuser'); 
+            return view('userProfile', ['userData' => $userData]);
+        } else {
+            return redirect('/usersignin')->withErrors('Session data not found.');
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
-
-    // public function signin()
-    // {
-    //     return view('signin');
-    // }
 }

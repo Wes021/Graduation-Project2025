@@ -46,11 +46,11 @@
             <div>
               <span class="head">Create Account</span>
               <span class="body">
-                <a href="{{ route('signin')}}"> Sign In </a>instead?</span
+                <a href="{{ route('usersignin')}}"> Sign In </a>instead?</span
               >
             </div>
   
-            <form action="{{ route('customers.store') }}" method="POST">
+            <form action="{{ route('usersignuproccss') }}" method="POST">
               @csrf
               <p>Fullname</p>
               <input id="name" type="text" name="name" required />
@@ -132,4 +132,4 @@
 </html>
 
 <script src="frontend/scripts/navbar.js"></script>
-<script src="frontend/scripts/userSignup.js"></script>
+{{-- <script src="frontend/scripts/userSignup.js"></script> --}}

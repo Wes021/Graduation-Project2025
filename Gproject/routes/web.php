@@ -7,14 +7,18 @@ use App\Http\Controllers\CustomerController;
 
 
 /////////CustomerController/////////
-Route::resource('customers', CustomerController::class);
+Route::get('/usersignup',[CustomerController::class,'Index'])->name('usersignup');
+Route::post('/usersignuproccss',[CustomerController::class,'SignUpUser'])->name('usersignuproccss');
+Route::get('/usersignin',[CustomerController::class,'UsersigninIndex'])->name('usersignin');
+Route::post('/usersigninroccss',[CustomerController::class,'Usersignin'])->name('usersigninroccss');
+Route::get('/Profile',[CustomerController::class,'userprofile'])->name('UserProfile');
 /////////CustomerController/////////
 
 
 /////////AuthController/////////
-Route::get('/signin',[AuthController::class,'signinIndex'])->name('signin');
+// Route::get('/signin',[AuthController::class,'signinIndex'])->name('signin');
 
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+// Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::get('/AdminSignin', [AuthController::class, 'AdminSigninIndex'])->name('AdminSignin');
 

@@ -47,10 +47,10 @@
         <div>
           <span class="head"> Sign In as user</span>
           <span class="body">
-            <a href="{{ route('customers.create') }}"> Create Account </a>instead?</span>
+            <a href="{{ route('usersignup') }}"> Create Account </a>instead?</span>
 
         </div>
-        <form action="{{ route('login') }}" method="POST">
+        <form action="{{ route('usersigninroccss') }}" method="POST">
           @csrf
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required>
