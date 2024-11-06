@@ -13,7 +13,7 @@ class Customer extends Model
     private $username;
     private $password;
     private $phone;
-    private $address;
+    // private $address;
 
     // Constructor to set ID
     public function __construct(array $attributes = [])

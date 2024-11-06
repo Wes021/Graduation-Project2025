@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\Customer;
 use Exception;
 use Illuminate\Http\Request;
@@ -21,16 +22,29 @@ class CustomerController extends Controller
             'username'=> 'required|string|max:255|unique:user,username',
             'password'=> 'required|max:255|unique:user,password',
             'phone'=> 'required|string|max:255|unique:user,phone',
-            'address'=>'required|string|max:255'
+            'gender'=>'required',
+            // 'address'=>'required|string|max:255',
+
+            'governorate'=>'string|max:255',
+            'city'=>'string|max:255',
+            'street'=>'string|max:255'
         ]);
         try{
         $customer =new Customer();
+        $address=new Address();
         $customer->name=$validateData['name'];
         $customer->username=$validateData['username'];
         $customer->password=$validateData['password'];
         $customer->phone=$validateData['phone'];
-        $customer->address=$validateData['address'];
+        // $customer->address=$validateData['address'];
+
+        $address-> governorate=$validateData['governorate'];
+        $address->city=$validateData['city'];
+        $address->street=$validateData['street'];
+
+
         $customer->save();
+        $address->save();
 
         return redirect()->route('usersignin');
         } catch(Exception $e){
@@ -62,7 +76,7 @@ class CustomerController extends Controller
             $userId=$user->user_id,
             $usermainname=$user->name,
             $userphone=$user->phone,
-            $useraddress=$user->address,
+            // $useraddress=$user->address,
         ]);
 
 

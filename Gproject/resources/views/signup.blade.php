@@ -63,9 +63,23 @@
           
             <p>Password</p>
             <input id="password" type="text" name="password" required />
+
+            <p>Gender</p>
+              <p>Male</p>
+              <input type="radio" id="male" name="gender" value="male">
+              
+              <p>Female</p>
+              <input type="radio" id="female" name="gender" value="female">
+              
   
-            <p>address</p>
-            <input type="text" id="address" name="address" required />
+            {{-- <p>address</p>
+            <input type="text" id="address" name="address" required /> --}}
+            <p>Governorate</p>
+            <input type="text" name="governorate">
+            <p>City</p>
+            <input type="text" name="city">
+            <p>Street</p>
+            <input type="text" name="street">
 
               <p class="body">Stay signed in for 30 days</p>
             
