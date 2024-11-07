@@ -33,6 +33,9 @@ class Address extends Model
         return $randomId;
     }
 
+    
+
+
     ////////////setter&gettergovernorate////////////
     public function getGovernorateAttribute($value)
     {
@@ -66,7 +69,7 @@ class Address extends Model
 
     public function setStreetAttribute($value)
     {
-        $this->attributes['city'] = trim($value);
+        $this->attributes['street'] = trim($value);
     }
     ////////////setter&getterStreet////////////
 

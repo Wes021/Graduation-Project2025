@@ -34,7 +34,7 @@
     <p>User ID: {{ $userData[0] }}</p>
     <p>Name: {{ $userData[1] }}</p>
     <p>Phone: {{ $userData[2] }}</p>
-    <p>Address: {{ $userData[3] }}</p>
+    
 @else
     <p>No user data available.</p>
 @endif

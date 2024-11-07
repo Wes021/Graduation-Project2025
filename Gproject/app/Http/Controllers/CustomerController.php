@@ -27,29 +27,41 @@ class CustomerController extends Controller
 
             'governorate'=>'string|max:255',
             'city'=>'string|max:255',
-            'street'=>'string|max:255'
+            'street'=>'string|max:255',
+            // 'address_Id'=>'string|max:255'
         ]);
+
         try{
-        $customer =new Customer();
         $address=new Address();
+        // $address->address_Id=$validateData['address_Id'];
+        $address-> governorate=$validateData['governorate'];
+        $address->city=$validateData['city'];
+        $address->street=$validateData['street'];
+        
+
+        $address->save();
+
+
+        $customer =new Customer();
+        
         $customer->name=$validateData['name'];
         $customer->username=$validateData['username'];
         $customer->password=$validateData['password'];
         $customer->phone=$validateData['phone'];
+        $customer->gender=$validateData['gender'];
         // $customer->address=$validateData['address'];
-
-        $address-> governorate=$validateData['governorate'];
-        $address->city=$validateData['city'];
-        $address->street=$validateData['street'];
-
-
+        $customer->address_Id = $address->address_Id;
+        
         $customer->save();
-        $address->save();
+        
 
         return redirect()->route('usersignin');
-        } catch(Exception $e){
-            return redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
-        }
+    }
+    catch(Exception $e){
+        return redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
+    }
+         
+        
     }
 
     public function UsersigninIndex()
