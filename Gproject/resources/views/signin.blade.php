@@ -14,24 +14,24 @@
   </head>
   <body>
   <!------------------- navigation bar start ------------>
-    <header>    
-        <nav>
-          <div class="logo">
-            <img
-              src="https://i.postimg.cc/KvWzQQz2/Whats-App-Image-2023-03-28-at-2-23-14-PM.jpg"
-              alt=""
-            />
-          </div>
-          <div class="hamburger">
-            <i class="fas fa-bars"></i>
-          </div>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-          </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="nav">
+    <div class="part1">
+             <img width="100%" src="https://i.postimg.cc/KvWzQQz2/Whats-App-Image-2023-03-28-at-2-23-14-PM.jpg" alt="logo">
+        <img width="100%" src="https://i.postimg.cc/cHrqvmyc/Stike.png" alt="">
+        <div>
+             <a id="nbtn" href="{{ route('/') }}">Home</a>
+          
+        </div>
+       
+    </div>
+    
+   <div class="part2">
+        <a id="nbtn" href="./login.html">Login</a>
+        <a id="nbtn" href="./userSignup.html">Signup</a>
+        <button class="nav-button" fdprocessedid="sbvkvg">Register as Studio</button>
+    </div>
+</div></header>
  
 
  <!------------------- page contain  ------------>

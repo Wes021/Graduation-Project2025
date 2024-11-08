@@ -49,7 +49,7 @@
               <p>city: {{ session('Cuser')->city }}</p>
               
 
-              <p>street:{{ session('Cuser')->street }}</p>
+              <p>street: {{ session('Cuser')->street }}</p>
               
             </div>
        

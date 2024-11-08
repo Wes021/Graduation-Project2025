@@ -21,7 +21,7 @@
             <i class="fas fa-bars"></i>
           </div>
           <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{route('/')}}">Home</a></li>
 
             
           </ul>

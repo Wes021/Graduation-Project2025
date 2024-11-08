@@ -33,6 +33,14 @@ Route::get('/AdminProfile', [AdminController::class,'adminprofile'])->name('Admi
 
 /////////AdminController/////////
 
+/////////Home Page/////////
+Route::get('/',function(){
+    return view('Home');
+})->name('/');
+/////////Home Page/////////
+
+
+
 
 
 Route::get('/profile', function () {
