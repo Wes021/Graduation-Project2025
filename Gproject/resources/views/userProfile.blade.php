@@ -14,7 +14,7 @@
       <div class="sidenav">
         <a class="logo-a-tag" href="../studio/DashBoard.html"><img src="../../images/logo-without-bg.png" alt=""></a>
         <ul class="sidenav-list">
-          <li><a href="../studio/DashBoard.html"><span class="material-symbols-outlined"> dashboard_customize </span>DashBoard</a></li>
+          {{-- <li><a href="../studio/DashBoard.html"><span class="material-symbols-outlined"> dashboard_customize </span>DashBoard</a></li> --}}
           <li><a href="#"><span class="material-symbols-outlined">account_circle</span>Profile</a></li>
           <li><a href="../studio/albums.html"><span class="material-symbols-outlined"> photo_library </span>Albums</a></li>
           <li><a href="../studio/apointments.html"><span class="material-symbols-outlined"> beenhere </span>Appointments</a></li>
@@ -30,14 +30,28 @@
         <div class="profile-maindiv">
           <div class="profile-child-div">
            
-            @if(isset($userData))
-    <p>User ID: {{ $userData[0] }}</p>
-    <p>Name: {{ $userData[1] }}</p>
-    <p>Phone: {{ $userData[2] }}</p>
-    
-@else
-    <p>No user data available.</p>
-@endif
+            <div>
+              <p>name: {{ session('Cuser')->name }}</p>
+
+              <p>username: {{ session('Cuser')->username }}</p>
+
+              <p>phone:{{ session('Cuser')->phone }}</p>
+              
+
+              <p>gender: {{ session('Cuser')->gender }}</p>
+            
+            </div>
+
+            <div>
+              <p>governorate: {{ session('Cuser')->governorate }}</p>
+              
+
+              <p>city: {{ session('Cuser')->city }}</p>
+              
+
+              <p>street:{{ session('Cuser')->street }}</p>
+              
+            </div>
        
         
           </div>

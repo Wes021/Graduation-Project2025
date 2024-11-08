@@ -79,17 +79,18 @@ class CustomerController extends Controller
         $password=$request->input('password');
 
         $user=DB::table('user')->where('username', $username)->first();
-    
+        
+        
 
         if($user && $user->password===$password){
        
+            $userId=$user->user_id;
+            $userdata = DB::table('user')
+        ->leftJoin('address', 'user.address_id', '=', 'address.address_id')
+        ->where('user.user_id', $userId)
+        ->first();
 
-            $request->session()->put('Cuser', [
-            $userId=$user->user_id,
-            $usermainname=$user->name,
-            $userphone=$user->phone,
-            // $useraddress=$user->address,
-        ]);
+            $request->session()->put('Cuser',$userdata);
 
 
             return redirect()->route('UserProfile');
@@ -108,6 +109,8 @@ class CustomerController extends Controller
             return redirect('/usersignin')->withErrors('Session data not found.');
         }
     }
+
+    
 
     public function userLogout(Request $request){
         $request->session()->forget('Cuser');

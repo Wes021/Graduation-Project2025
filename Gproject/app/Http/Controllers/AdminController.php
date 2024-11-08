@@ -35,11 +35,7 @@ class AdminController extends Controller
 
         if($admin && $admin->password===$Password){
             
-            $request->session()->put('Auser',[
-                $adminid=$admin->employee_id,
-                $adminName=$admin->name,
-                $adminPhone=$admin->phone
-            ]);
+            $request->session()->put('Auser',$admin);
 
             return redirect()->route('AdminProfile');
 

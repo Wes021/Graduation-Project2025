@@ -30,14 +30,9 @@
         <div class="profile-maindiv">
           <div class="profile-child-div">
            
-            @if(isset($admindata))
-            <p>User ID: {{ $admindata[0] }}</p>
-            <p>Name: {{ $admindata[1] }}</p>
-            <p>Phone: {{ $admindata[2] }}</p>
-            <p>Address:N/A</p>
-        @else
-            <p>No user data available.</p>
-        @endif
+            <p>name: {{ session('Auser')->name }}</p>
+            <p>username: {{ session('Auser')->username }}</p>
+            <p>phone: {{ session('Auser')->phone }}</p>
         
           </div>
           <div class="profile-other-info">
