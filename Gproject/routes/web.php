@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
-
+use App\Models\CategoryApp;
 
 /////////CustomerController/////////
 
@@ -39,10 +39,11 @@ Route::get('/',function(){
 })->name('/');
 /////////Home Page/////////
 
+Route::get('/appointment',[CategoryController::class, 'getOptions'])->name('appointment');
 
 
 
 
-Route::get('/profile', function () {
-    return view('userProfile'); 
-})->name('profile');
+Route::get('/test', function () {
+    return view('appointment'); 
+})->name('test');

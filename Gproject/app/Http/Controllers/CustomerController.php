@@ -114,9 +114,12 @@ class CustomerController extends Controller
 
     public function userLogout(Request $request){
         $request->session()->forget('Cuser');
-
+        
 
         return redirect()->route('usersignin')->with('success', 'Logged out successfully');
     }
+
+
+   
 
 }
