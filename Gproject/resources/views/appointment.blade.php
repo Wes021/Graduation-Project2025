@@ -25,6 +25,8 @@
         <!-- this image needed to be centered -->
     </div>
     <!-- post request for booking appointment -->
+
+    <form action=""me method="POST">
     <div class="date_div">
         {{-- <label for="">Check for Slots :</label>
     <input id="date_value" type="date">
@@ -39,7 +41,7 @@
     <input type="date" name="date" id="">
 
     <label for="time">Time</label>
-    <input type="time" name="" id="">
+    <input type="time" name="time" id="">
 
     <select name="categories">
         <option value="">Select an item</option>
@@ -49,7 +51,7 @@
       </select>
     </div>
 
-    
+</form>
     <hr>
     {{-- <div class="slots_div">
 

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Address;
+use App\Models\Appointments;
+use App\Models\AppointmentTime;
+use App\Models\CategoryApp;
 use App\Models\Customer;
 use Exception;
 use Illuminate\Http\Request;
@@ -120,6 +123,19 @@ class CustomerController extends Controller
     }
 
 
+    public function userAppointment(Request $request){
+        $category=new CategoryApp();
+        $appointmenttime=new AppointmentTime();
+        $appointment= new Appointments();
+
+        $appointment->appointment_time_id=$appointmenttime->appointment_time_id;
+        $appointment->category_app_id=$category->category_app_id;
+        
+
+
+
+        
+    }
    
 
 }
