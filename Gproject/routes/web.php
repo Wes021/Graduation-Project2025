@@ -20,6 +20,12 @@ Route::get('/Userlogout',[CustomerController::class, 'userLogout'])->name('UserL
 Route::get('/UserProfile',[CustomerController::class,'userprofile'])->name('UserProfile');
 //////UserSignIn//////
 
+//////UserAppointment//////
+Route::post('/appointment',[CustomerController::class,'userAppointment'])->name('appointmentSubmit');
+//////UserAppointment//////
+
+
+
 /////////CustomerController/////////
 
 /////////AdminController/////////
@@ -44,6 +50,7 @@ Route::get('/appointment',[CategoryController::class, 'getOptions'])->name('appo
 
 
 
-Route::get('/test', function () {
-    return view('appointment'); 
-})->name('test');
+
+// Route::get('/test', function () {
+//     return view('Home'); 
+// })->name('Home');

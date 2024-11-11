@@ -11,6 +11,6 @@ class CategoryController extends Controller
     public function getOptions(Request $request){
         $categories=CategoryApp::all();
 
-        return view('appointment', ['categories'=>$categories]);
+        return view('appointment', compact('categories'));
     }
 }

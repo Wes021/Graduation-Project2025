@@ -7,7 +7,9 @@ use App\Models\Appointments;
 use App\Models\AppointmentTime;
 use App\Models\CategoryApp;
 use App\Models\Customer;
+use App\Models\Location;
 use Exception;
+use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -96,7 +98,7 @@ class CustomerController extends Controller
             $request->session()->put('Cuser',$userdata);
 
 
-            return redirect()->route('UserProfile');
+            return redirect()->route('/');
         }else{
             return redirect()->back()->with('error', 'Invalid ');
         }
@@ -127,9 +129,33 @@ class CustomerController extends Controller
         $category=new CategoryApp();
         $appointmenttime=new AppointmentTime();
         $appointment= new Appointments();
+        $location=new Location();
 
-        $appointment->appointment_time_id=$appointmenttime->appointment_time_id;
-        $appointment->category_app_id=$category->category_app_id;
+        $validatedData = $request->validate([
+            'categories' => 'required|exists:category_app,category_app_id',
+            'date' => 'required|date',              // Validates the date field
+            'time' => 'required|date_format:H:i',    // Validates the time field in HH:MM format
+        ]);
+        
+
+        $location->save();
+            $userData = session('Cuser'); 
+    
+
+        $appointmenttime->date=$validatedData['date'];
+        $appointmenttime->time=$validatedData['time'];
+
+        $appointmenttime->save();
+        
+        // Use $userData to get the user_id from the session and set it in the appointment
+        $appointment->appointment_time_id = $appointmenttime->appointment_time_id;
+        $appointment->category_app_id = $request->input('categories');
+        $appointment->location_id = $location->location_id;
+        $appointment->user_id = $userData->user_id; // Access user_id from session data
+        
+        $appointment->save();
+        
+        
         
 
 

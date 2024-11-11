@@ -26,16 +26,17 @@
     </div>
     <!-- post request for booking appointment -->
 
-    <form action=""me method="POST">
+    <form action="{{ route('appointmentSubmit') }}" method="POST">
+        @csrf
     <div class="date_div">
         {{-- <label for="">Check for Slots :</label>
     <input id="date_value" type="date">
     <button class="date_ btn" onclick="trigger()">Check Slots via Date</button> --}}
-    <label for="name">Name</label>
+    {{-- <label for="name">Name</label>
     <input type="text" name="name" id=""><br><br>
 
     <label for="phone">Phone</label>
-    <input type="text" name="phone" id="">
+    <input type="text" name="phone" id=""> --}}
 
     <label for="date">Date</label>
     <input type="date" name="date" id="">
@@ -49,6 +50,7 @@
             <option value="{{ $category->category_app_id }}">{{ $category->category_name }}</option>
         @endforeach
       </select>
+      <button type="submit">add</button>
     </div>
 
 </form>

@@ -11,6 +11,9 @@ class CategoryApp extends Model
     private $category_app_id;
     private $category_name;
 
+
+   
+
     ////////////setter&getterCategory////////////
     public function getCategoryAttribute($value)
     {
