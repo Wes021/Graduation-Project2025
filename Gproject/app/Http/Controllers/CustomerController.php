@@ -98,7 +98,7 @@ class CustomerController extends Controller
             $request->session()->put('Cuser',$userdata);
 
 
-            return redirect()->route('/');
+            return redirect()->route('userProfile');
         }else{
             return redirect()->back()->with('error', 'Invalid ');
         }
@@ -133,26 +133,34 @@ class CustomerController extends Controller
 
         $validatedData = $request->validate([
             'categories' => 'required|exists:category_app,category_app_id',
-            'date' => 'required|date',              // Validates the date field
-            'time' => 'required|date_format:H:i',    // Validates the time field in HH:MM format
+            'date' => 'required|date',              
+            'time' => 'required|date_format:H:i',    
         ]);
         
 
-        $location->save();
-            $userData = session('Cuser'); 
+        
+            
+            $userData = (array) session('Cuser'); 
+
+            $existingAppointment = Appointments::where('user_id', $userData['user_id'])->first();
+
+        if ($existingAppointment) {
+            
+         return redirect()->back()->withErrors(['error' => 'You can only create one appointment.']);
+        }
     
 
         $appointmenttime->date=$validatedData['date'];
         $appointmenttime->time=$validatedData['time'];
-
-        $appointmenttime->save();
         
-        // Use $userData to get the user_id from the session and set it in the appointment
+        
+        
         $appointment->appointment_time_id = $appointmenttime->appointment_time_id;
         $appointment->category_app_id = $request->input('categories');
         $appointment->location_id = $location->location_id;
-        $appointment->user_id = $userData->user_id; // Access user_id from session data
-        
+        $appointment->user_id = $userData['user_id'];
+        $location->save();
+        $appointmenttime->save();
         $appointment->save();
         
         
