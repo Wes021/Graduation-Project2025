@@ -21,6 +21,7 @@ Route::get('/Userlogout',[CustomerController::class, 'userLogout'])->name('UserL
 Route::get('/UserProfile',[CustomerController::class,'userprofile'])->name('UserProfile');
 //////UserSignIn//////
 Route::get('/myappointments',[CustomerController::class,'userAppointments'])->name('myappointments');
+Route::get('/mappointments',[AdminController::class,'diyplayUserAppointment'])->name('mappointments');
 
 //////UserAppointment//////
 Route::post('/appointment',[CustomerController::class,'userAppointment'])->name('appointmentSubmit');
