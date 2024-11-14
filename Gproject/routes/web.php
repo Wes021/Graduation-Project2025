@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Models\CategoryApp;
+use App\Models\Customer;
 
 /////////CustomerController/////////
 
@@ -19,6 +20,7 @@ Route::post('/usersigninroccss',[CustomerController::class,'Usersignin'])->name(
 Route::get('/Userlogout',[CustomerController::class, 'userLogout'])->name('UserLogout');
 Route::get('/UserProfile',[CustomerController::class,'userprofile'])->name('UserProfile');
 //////UserSignIn//////
+Route::get('/myappointments',[CustomerController::class,'userAppointments'])->name('myappointments');
 
 //////UserAppointment//////
 Route::post('/appointment',[CustomerController::class,'userAppointment'])->name('appointmentSubmit');
@@ -49,7 +51,9 @@ Route::get('/appointment',[CategoryController::class, 'getOptions'])->name('appo
 
 
 
-
+Route::get('/test',function(){
+    return view('userAppointments');
+});
 
 // Route::get('/test', function () {
 //     return view('Home'); 

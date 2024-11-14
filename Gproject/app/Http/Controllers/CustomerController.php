@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Address;
+use App\Models\Admin;
 use App\Models\Appointments;
 use App\Models\AppointmentTime;
 use App\Models\CategoryApp;
@@ -98,7 +99,7 @@ class CustomerController extends Controller
             $request->session()->put('Cuser',$userdata);
 
 
-            return redirect()->route('userProfile');
+            return redirect()->route('/');
         }else{
             return redirect()->back()->with('error', 'Invalid ');
         }
@@ -112,6 +113,31 @@ class CustomerController extends Controller
             return view('userProfile', ['userData' => $userData]);
         } else {
             return redirect('/usersignin')->withErrors('Session data not found.');
+        }
+    }
+
+
+    public function userAppointments(Request $request){
+
+        $userData = (array) session('Cuser');
+        $userName=$userData['username'];
+        $userapp=$userapp = DB::table('user')->where('username', $userName)->first();
+
+        
+        if($userapp){
+            $appointments = DB::table('appointments')
+            ->leftJoin('user', 'Appointments.user_id', '=', 'user.user_id')  // Join with the 'users' table
+            ->leftJoin('employees', 'Appointments.employee_id', '=', 'employees.employee_id')  // Join with the 'employees' table
+            ->leftJoin('category_app', 'Appointments.category_app_id', '=', 'category_app.category_app_id')  // Join with the 'categories' table
+            ->leftJoin('location', 'Appointments.location_id', '=', 'location.location_id')  // Join with the 'locations' table
+            ->leftJoin('appointment_time', 'Appointments.appointment_time_id', '=', 'appointment_time.appointment_time_id')  // Join with the 'appointment_times' table
+            ->where('appointments.user_id', $userapp->user_id)  // Filter appointments by user_id
+            ->select('Appointments.appointment_id','user.phone as phone' ,'user.name as user_name', 'employees.name as employee_name','employees.phone as em_phone', 'category_app.category_name as category_name', 'appointment_time.date as appointment_date')
+            ->get();
+
+            return view('userAppointments', compact('appointments'));
+        }else{
+            return redirect()->route('login')->withErrors(['error' => 'User not found or session expired']);
         }
     }
 
@@ -136,11 +162,11 @@ class CustomerController extends Controller
             'date' => 'required|date',              
             'time' => 'required|date_format:H:i',    
         ]);
+    
         
-
-        
-            
             $userData = (array) session('Cuser'); 
+
+           
 
             $existingAppointment = Appointments::where('user_id', $userData['user_id'])->first();
 
@@ -148,7 +174,8 @@ class CustomerController extends Controller
             
          return redirect()->back()->withErrors(['error' => 'You can only create one appointment.']);
         }
-    
+        
+        $assignEmployee=Admin::inRandomOrder()->first();
 
         $appointmenttime->date=$validatedData['date'];
         $appointmenttime->time=$validatedData['time'];
@@ -159,9 +186,11 @@ class CustomerController extends Controller
         $appointment->category_app_id = $request->input('categories');
         $appointment->location_id = $location->location_id;
         $appointment->user_id = $userData['user_id'];
+        $appointment->employee_id=$assignEmployee->employee_id;
         $location->save();
         $appointmenttime->save();
         $appointment->save();
+    
         
         
         

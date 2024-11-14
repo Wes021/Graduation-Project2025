@@ -15,6 +15,20 @@ class Admin extends Model
     private $phone;
 
 
+
+    ////////////setter&getterName////////////
+    public function getIdAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function setIdAttribute($value)
+    {
+        $this->attributes['employee_id'] = trim($value);
+    }
+    ////////////setter&getterName////////////
+
+
     ////////////setter&getterName////////////
     public function getNameAttribute($value)
     {

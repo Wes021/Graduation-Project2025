@@ -9,8 +9,7 @@ class Appointments extends Model
     public $timestamps = false;
     protected $table='Appointments';
     private $appointment_id;
-    private $date;
-    private $time;
+    private $employee_id;
    
 
 
