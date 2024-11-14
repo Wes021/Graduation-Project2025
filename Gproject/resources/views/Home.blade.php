@@ -26,7 +26,7 @@
    <div class="part2">
         <a id="nbtn" href="{{ route('usersignin') }}">Login</a>
         <a id="nbtn" href="{{ route('usersignup') }}">Signup</a>
-        {{-- <button class="nav-button">Register as Studio</button> --}}
+        <a id="nbtn" href="{{ route('UserProfile') }}">Profile</a>
     </div>
 </div></header>
 

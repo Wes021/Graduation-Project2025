@@ -29,14 +29,14 @@
             <div>
               <p>Appointment Details</p> 
             </div>
-            {{-- <div class="sort_filter">
+            <div class="sort_filter">
               <select name="status-filter" id="status-filter">
                 <option value="Pending">Pending</option>
                 <option value="Accepted">Accepted</option>
                 <option value="Rejected">Rejected</option>
               </select>
               <input type="date" name="date-filter" id="date-filter">
-            </div> --}}
+            </div>
           </div>
           <div class="appointment-child">
             @if($appointments->isEmpty())
@@ -50,6 +50,7 @@
                         <th>Date</th>
                         <th>Category</th>
                         <th>Assigned to</th>
+                        <th>Status</th>
                         
                     </tr>
                 </thead>
@@ -61,6 +62,14 @@
                             <td>{{ $appointment->appointment_date }}</td>
                             <td>{{ $appointment->category_name }}</td>
                             <th>{{$appointment->employee_name}}</th>
+                            <th>NULL</th>
+                            <th><select name="statuses">
+                              <option value="">Select an item</option>
+                              @foreach ($statuses as $status)
+                                  <option value="{{ $status->appointment_statuses_id }}">{{ $status->status_name }}</option>
+                              @endforeach
+                            </select></th>
+                            <th><button></button></th>
                             
 
                             

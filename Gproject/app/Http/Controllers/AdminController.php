@@ -65,9 +65,10 @@ class AdminController extends Controller
     }
 
     public function diyplayUserAppointment(Request $request){
-        $adminData =session('Auser');
+        $adminData =(array)session('Auser');
         $adminName=$adminData['username'];
-        $adminapp = DB::table('employee')->where('username', $adminName)->first();
+        $adminapp = DB::table('employees')->where('username', $adminName)->first();
+        
 
         if($adminapp){
             $appointments = DB::table('appointments')

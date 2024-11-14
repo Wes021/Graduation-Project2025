@@ -51,6 +51,7 @@
                         <th>Category</th>
                         <th>Assigned to</th>
                         <th>contact</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,6 +63,7 @@
                             <td>{{ $appointment->category_name }}</td>
                             <th>{{$appointment->employee_name}}</th>
                             <th>{{$appointment->em_phone}}</th>
+                            <th>NULL</th>
                             <th><button>edit</button></th>
                             <th><button>delet</button></th>
 
