@@ -6,19 +6,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('frontend/styles/studio/profile.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/styles/studio/navbar.css') }}">
-    <link rel="icon" href="../../images/logo-without-bg.png" type="image/x-icon">
+    <link rel="icon" href="frontend/images/logo-without-bg.png" type="image/x-icon">
   </head>
   <body>
-    <h1>HELLO</h1>
+    
     <!-- ! ============================ NAVBAR ================================= -->
     <section>
       <div class="sidenav">
         <a class="logo-a-tag" href="../studio/DashBoard.html"><img src="../../images/logo-without-bg.png" alt=""></a>
         <ul class="sidenav-list">
           <li><a href="../studio/DashBoard.html"><span class="material-symbols-outlined"> dashboard_customize </span>DashBoard</a></li>
-          <li><a href="#"><span class="material-symbols-outlined">account_circle</span>Profile</a></li>
+          <li><a href="{{route('AdminProfile')}}"><span class="material-symbols-outlined">account_circle</span>Profile</a></li>
           <li><a href="../studio/albums.html"><span class="material-symbols-outlined"> photo_library </span>Albums</a></li>
-          <li><a href="../studio/apointments.html"><span class="material-symbols-outlined"> beenhere </span>Appointments</a></li>
+          <li><a href="{{route('diyplayUserAppointment')}}"><span class="material-symbols-outlined"> beenhere </span>Appointments</a></li>
 
           <li><a href="{{route('AdminLogOut')}}"><span class="material-symbols-outlined"> logout </span>Logout</a></li>
 

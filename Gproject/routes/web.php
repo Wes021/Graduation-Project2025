@@ -20,14 +20,12 @@ Route::post('/usersigninroccss',[CustomerController::class,'Usersignin'])->name(
 Route::get('/Userlogout',[CustomerController::class, 'userLogout'])->name('UserLogout');
 Route::get('/UserProfile',[CustomerController::class,'userprofile'])->name('UserProfile');
 //////UserSignIn//////
-Route::get('/myappointments',[CustomerController::class,'userAppointments'])->name('myappointments');
-Route::get('/mappointments',[AdminController::class,'diyplayUserAppointment'])->name('mappointments');
 
 //////UserAppointment//////
 Route::post('/appointment',[CustomerController::class,'userAppointment'])->name('appointmentSubmit');
+Route::get('/myappointments',[CustomerController::class,'userAppointments'])->name('myappointments');
+Route::get('/appointmentpage',[CustomerController::class,'appIndex'])->name('appointmentpage');
 //////UserAppointment//////
-
-
 
 /////////CustomerController/////////
 
@@ -40,6 +38,11 @@ Route::get('/Adminlogout', [AdminController::class,'adminLogout'])->name('AdminL
 Route::get('/AdminProfile', [AdminController::class,'adminprofile'])->name('AdminProfile');
 //////AdminSignUp//////
 
+//////AdminAppointment//////
+Route::get('/diyplayUserAppointment',[AdminController::class,'diyplayUserAppointment'])->name('diyplayUserAppointment');
+
+Route::put('/changestatus/{appointment_id}',[AdminController::class,'changeStatus'])->name('changestatus');
+//////AdminAppointment//////
 /////////AdminController/////////
 
 /////////Home Page/////////
@@ -48,13 +51,10 @@ Route::get('/',function(){
 })->name('/');
 /////////Home Page/////////
 
-Route::get('/appointment',[CategoryController::class, 'getOptions'])->name('appointment');
 
 
 
-Route::get('/test',function(){
-    return view('userAppointments');
-});
+
 
 // Route::get('/test', function () {
 //     return view('Home'); 

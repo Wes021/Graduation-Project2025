@@ -37,7 +37,7 @@
               <p id="mtext">Strike a Pose</p> 
             <span id="btext">Book </span><span> a Photoshoot Today</span>
             <br>
-            <button onclick="window.location='{{ route('appointment') }}'" class="top-button">Book A Session</button>  
+            <button onclick="window.location='{{ route('appointmentpage') }}'" class="top-button">Book A Session</button>  
             </div>
             
         </div>

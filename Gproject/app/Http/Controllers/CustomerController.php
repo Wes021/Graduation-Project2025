@@ -20,30 +20,33 @@ class CustomerController extends Controller
     public function Index(){
         return view('signup');
     }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public function appIndex(){
+        return view('appointment');
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public function SignUpUser(Request $request){
+        try{
         $validateData=$request->validate([
             'name' =>  'required|string|max:255',
             'username'=> 'required|string|max:255|unique:user,username',
             'password'=> 'required|max:255|unique:user,password',
             'phone'=> 'required|string|max:255|unique:user,phone',
             'gender'=>'required',
-            // 'address'=>'required|string|max:255',
+            
 
             'governorate'=>'string|max:255',
             'city'=>'string|max:255',
             'street'=>'string|max:255',
-            // 'address_Id'=>'string|max:255'
+            
         ]);
 
-        try{
+        
         $address=new Address();
-        // $address->address_Id=$validateData['address_Id'];
         $address-> governorate=$validateData['governorate'];
         $address->city=$validateData['city'];
         $address->street=$validateData['street'];
-        
 
         $address->save();
 
@@ -55,7 +58,6 @@ class CustomerController extends Controller
         $customer->password=$validateData['password'];
         $customer->phone=$validateData['phone'];
         $customer->gender=$validateData['gender'];
-        // $customer->address=$validateData['address'];
         $customer->address_Id = $address->address_Id;
         
         $customer->save();
@@ -69,13 +71,16 @@ class CustomerController extends Controller
          
         
     }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function UsersigninIndex()
     {
         return view('signin'); 
     }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+
     public function Usersignin(Request $request){
+        try{
         $request->validate([
             'username'=>'required|string',
             'password'=>'required|string'   
@@ -103,10 +108,15 @@ class CustomerController extends Controller
         }else{
             return redirect()->back()->with('error', 'Invalid ');
         }
+    }catch(Exception$e){
+        redirect()->back()->with('error','Sign in faild, check your inserted info.'.$e->getMessage());
+    }
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public function userprofile(Request $request){
-        
+        try{
         
         if (session()->has('Cuser')) {
             $userData = session('Cuser'); 
@@ -114,11 +124,14 @@ class CustomerController extends Controller
         } else {
             return redirect('/usersignin')->withErrors('Session data not found.');
         }
+    } catch(Exception $e){
+        redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
+    }
     }
 
 
     public function userAppointments(Request $request){
-
+try{
         $userData = (array) session('Cuser');
         $userName=$userData['username'];
         $userapp=$userapp = DB::table('user')->where('username', $userName)->first();
@@ -131,27 +144,37 @@ class CustomerController extends Controller
             ->leftJoin('category_app', 'Appointments.category_app_id', '=', 'category_app.category_app_id')  // Join with the 'categories' table
             ->leftJoin('location', 'Appointments.location_id', '=', 'location.location_id')  // Join with the 'locations' table
             ->leftJoin('appointment_time', 'Appointments.appointment_time_id', '=', 'appointment_time.appointment_time_id')  // Join with the 'appointment_times' table
+            ->leftJoin('appointment_statuses','Appointments.appointment_statuses_id','=', 'appointment_statuses.appointment_statuses_id' )
             ->where('appointments.user_id', $userapp->user_id)  // Filter appointments by user_id
-            ->select('Appointments.appointment_id','user.phone as phone' ,'user.name as user_name', 'employees.name as employee_name','employees.phone as em_phone', 'category_app.category_name as category_name', 'appointment_time.date as appointment_date')
+            ->select('Appointments.appointment_id','user.phone as phone' ,'user.name as user_name', 'employees.name as employee_name','employees.phone as em_phone', 'category_app.category_name as category_name', 'appointment_time.date as appointment_date','appointment_statuses.status_name as status')
             ->get();
 
             return view('userAppointments', compact('appointments'));
         }else{
             return redirect()->route('login')->withErrors(['error' => 'User not found or session expired']);
         }
+    }catch(Exception $e){
+        redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
+    }
     }
 
-    
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
 
     public function userLogout(Request $request){
+        try{
+
         $request->session()->forget('Cuser');
         
 
         return redirect()->route('usersignin')->with('success', 'Logged out successfully');
+        } catch(Exception $e){
+            redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
+        }
     }
 
 
     public function userAppointment(Request $request){
+        try{
         $category=new CategoryApp();
         $appointmenttime=new AppointmentTime();
         $appointment= new Appointments();
@@ -191,7 +214,9 @@ class CustomerController extends Controller
         $appointmenttime->save();
         $appointment->save();
     
-        
+    }catch(Exception $e){
+        redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
+    }
         
         
 

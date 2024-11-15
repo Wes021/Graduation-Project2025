@@ -14,10 +14,10 @@
         <a class="logo-a-tag" href="../studio/DashBoard.html"><img src="frontend/images/logo-without-bg.png" alt=""></a>
         <ul class="sidenav-list">
           
-          <li><a href="../studio/profile.html"><span class="material-symbols-outlined">account_circle</span>Profile</a></li>
+          <li><a href="{{route('UserProfile')}}"><span class="material-symbols-outlined">account_circle</span>Profile</a></li>
           <li><a href="../studio/albums.html"><span class="material-symbols-outlined"> photo_library </span>Albums</a></li>
           <li><a href="#"><span class="material-symbols-outlined"> beenhere </span>Appointments</a></li>
-          <li onclick="logout()"><a href="#"><span class="material-symbols-outlined"> logout </span>Logout</a></li>
+          <li onclick="logout()"><a href="{{route('UserLogout')}}"><span class="material-symbols-outlined"> logout </span>Logout</a></li>
         </ul>
       </div>
     </section>
@@ -63,7 +63,7 @@
                             <td>{{ $appointment->category_name }}</td>
                             <th>{{$appointment->employee_name}}</th>
                             <th>{{$appointment->em_phone}}</th>
-                            <th>NULL</th>
+                            <th>{{$appointment->status}}</th>
                             <th><button>edit</button></th>
                             <th><button>delet</button></th>
 

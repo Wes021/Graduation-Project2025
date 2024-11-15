@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-    public function getOptions(Request $request){
-        $categories=CategoryApp::all();
+    // public function getOptions(Request $request){
+    //     $categories=CategoryApp::all();
 
-        return view('appointment', compact('categories'));
-    }
+    //     return view('appointment', compact('categories'));
+    // }
 
     // public function status(Request $request){
     //     $statuses=Status::all();

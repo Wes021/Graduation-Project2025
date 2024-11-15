@@ -46,9 +46,13 @@
 
     <select name="categories">
         <option value="">Select an item</option>
-        @foreach ($categories as $category)
-            <option value="{{ $category->category_app_id }}">{{ $category->category_name }}</option>
-        @endforeach
+        <option value="10">In Studio</option>
+        <option value="20">Wedding</option>
+        <option value="21">Holiday</option>
+        <option value="22">Family</option>
+        <option value="23">Birthday</option>
+        <option value="24">Graduation</option>
+        <option value="30">Other</option>
       </select>
       <button type="submit">add</button>
     </div>
