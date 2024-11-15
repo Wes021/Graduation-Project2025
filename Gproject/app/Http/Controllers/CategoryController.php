@@ -15,8 +15,8 @@ class CategoryController extends Controller
         return view('appointment', compact('categories'));
     }
 
-    public function status(Request $request){
-        $statuses=Status::all();
-        return view('adminAppointment', compact('statuses'));
-    }
+    // public function status(Request $request){
+    //     $statuses=Status::all();
+    //     return view('adminAppointment', compact('statuses'));
+    // }
 }

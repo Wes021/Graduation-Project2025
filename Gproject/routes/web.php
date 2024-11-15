@@ -49,7 +49,7 @@ Route::get('/',function(){
 /////////Home Page/////////
 
 Route::get('/appointment',[CategoryController::class, 'getOptions'])->name('appointment');
-Route::get('/app',[CategoryController::class, 'status'])->name('app');
+
 
 
 Route::get('/test',function(){

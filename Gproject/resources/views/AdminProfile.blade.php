@@ -9,6 +9,7 @@
     <link rel="icon" href="../../images/logo-without-bg.png" type="image/x-icon">
   </head>
   <body>
+    <h1>HELLO</h1>
     <!-- ! ============================ NAVBAR ================================= -->
     <section>
       <div class="sidenav">
@@ -19,7 +20,7 @@
           <li><a href="../studio/albums.html"><span class="material-symbols-outlined"> photo_library </span>Albums</a></li>
           <li><a href="../studio/apointments.html"><span class="material-symbols-outlined"> beenhere </span>Appointments</a></li>
 
-          <li  onclick="logout()"><a href="{{route('AdminLogOut')}}"><span class="material-symbols-outlined"> logout </span>Logout</a></li>
+          <li><a href="{{route('AdminLogOut')}}"><span class="material-symbols-outlined"> logout </span>Logout</a></li>
 
         </ul>
       </div>

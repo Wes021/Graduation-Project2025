@@ -65,9 +65,11 @@
                             <th>NULL</th>
                             <th><select name="statuses">
                               <option value="">Select an item</option>
-                              @foreach ($statuses as $status)
-                                  <option value="{{ $status->appointment_statuses_id }}">{{ $status->status_name }}</option>
-                              @endforeach
+                            
+                              <option value="1">Confirmed</option>
+                              <option value="2">Canceled</option>
+                              <option value="3">Completed</option>
+                              
                             </select></th>
                             <th><button></button></th>
                             
