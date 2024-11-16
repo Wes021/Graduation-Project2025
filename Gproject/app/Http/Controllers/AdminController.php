@@ -2,14 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer; 
-use App\Models\Admin;
-use App\Models\Appointments;
-use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
-use function Illuminate\Log\log;
 use Exception;
 
 class AdminController extends Controller

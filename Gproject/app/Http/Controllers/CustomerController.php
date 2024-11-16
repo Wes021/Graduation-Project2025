@@ -10,7 +10,6 @@ use App\Models\CategoryApp;
 use App\Models\Customer;
 use App\Models\Location;
 use Exception;
-use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
