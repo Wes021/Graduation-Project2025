@@ -222,11 +222,11 @@ try{
 
     public function cancel(Request $request, $appointment_id){
 
-        //$appointment = Appointments::find($appointment_id);
-
-        // if (!$appointment) {
-        //     return redirect()->back()->with('error', 'Appointment not found.');
-        // }
+        $appointment = DB::table('Appointments')->where('appointment_id', $appointment_id)->first();
+    
+        if (!$appointment) {
+            return redirect()->back()->with('error', 'Appointment not found.');
+        }
     
         DB::table('Appointments')
             ->where('appointment_id', $appointment_id)
@@ -235,6 +235,12 @@ try{
             ]);
     
         return redirect()->back()->with('success', 'Appointment status updated successfully!');
+    }
+
+    public function editAppointment(Request $request){
+            $request->validate([
+                'statuses' => 'required|integer|in:1,2,3', // Validate the status input
+            ]);
     }
    
 
