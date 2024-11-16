@@ -1,11 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
-use App\Models\CategoryApp;
-use App\Models\Customer;
 
 /////////CustomerController/////////
 
