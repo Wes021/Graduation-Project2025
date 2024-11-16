@@ -146,7 +146,7 @@ try{
             ->leftJoin('appointment_time', 'Appointments.appointment_time_id', '=', 'appointment_time.appointment_time_id')  // Join with the 'appointment_times' table
             ->leftJoin('appointment_statuses','Appointments.appointment_statuses_id','=', 'appointment_statuses.appointment_statuses_id' )
             ->where('appointments.user_id', $userapp->user_id)  // Filter appointments by user_id
-            ->select('Appointments.appointment_id','user.phone as phone' ,'user.name as user_name', 'employees.name as employee_name','employees.phone as em_phone', 'category_app.category_name as category_name', 'appointment_time.date as appointment_date','appointment_statuses.status_name as status')
+            ->select('Appointments.appointment_id as appointment_id','user.phone as phone' ,'user.name as user_name', 'employees.name as employee_name','employees.phone as em_phone', 'category_app.category_name as category_name', 'appointment_time.date as appointment_date','appointment_statuses.status_name as status','appointment_statuses.appointment_statuses_id as appointment_statuses_id')
             ->get();
 
             return view('userAppointments', compact('appointments'));
@@ -218,11 +218,23 @@ try{
         redirect()->route('usersignin')->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
     }
         
-        
+    }
 
+    public function cancel(Request $request, $appointment_id){
 
+        //$appointment = Appointments::find($appointment_id);
 
-        
+        // if (!$appointment) {
+        //     return redirect()->back()->with('error', 'Appointment not found.');
+        // }
+    
+        DB::table('Appointments')
+            ->where('appointment_id', $appointment_id)
+            ->update([
+                'appointment_statuses_id' => 2,
+            ]);
+    
+        return redirect()->back()->with('success', 'Appointment status updated successfully!');
     }
    
 

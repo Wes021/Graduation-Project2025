@@ -22,6 +22,7 @@ Route::get('/UserProfile',[CustomerController::class,'userprofile'])->name('User
 Route::post('/appointment',[CustomerController::class,'userAppointment'])->name('appointmentSubmit');
 Route::get('/myappointments',[CustomerController::class,'userAppointments'])->name('myappointments');
 Route::get('/appointmentpage',[CustomerController::class,'appIndex'])->name('appointmentpage');
+Route::patch('/changestatuss/{appointment_id}/cancel', [CustomerController::class, 'cancel'])->name('changestatuss');
 //////UserAppointment//////
 
 /////////CustomerController/////////

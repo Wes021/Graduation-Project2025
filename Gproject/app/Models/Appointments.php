@@ -8,8 +8,10 @@ class Appointments extends Model
 {
     public $timestamps = false;
     protected $table='Appointments';
-    private $appointment_id;
+    
+    protected $primaryKey = 'appointment_id';
     private $employee_id;
+    private $appointment_statuses_id;
    
 
 

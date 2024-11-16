@@ -65,7 +65,14 @@
                             <th>{{$appointment->em_phone}}</th>
                             <th>{{$appointment->status}}</th>
                             <th><button>edit</button></th>
-                            <th><button>delet</button></th>
+                            <th><form action="{{ route('changestatuss', $appointment->appointment_id) }}" method="POST">
+                              @csrf
+                              @method('PATCH') <!-- Use PATCH if you're updating the resource -->
+                              <button type="submit" class="btn btn-danger">Cancel</button>
+                        </th>
+                            <th></th>
+                          </form></th>
+                            
 
                             
                         </tr>
