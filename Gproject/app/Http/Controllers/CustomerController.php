@@ -105,10 +105,11 @@ class CustomerController extends Controller
 
 
             return redirect()->route('/');
-        }else{
-            return redirect()->back()->with('error', 'Invalid ');
         }
-    }catch(Exception$e){
+        else{
+            return redirect()->back()->with('error', 'The Username or password you entered is wrong ');
+        }
+    }catch(Exception $e){
         redirect()->back()->with('error','Sign in faild, check your inserted info.'.$e->getMessage());
     }
     }
@@ -151,7 +152,7 @@ try{
 
             return view('userAppointments', compact('appointments'));
         }else{
-            return redirect()->route('login')->withErrors(['error' => 'User not found or session expired']);
+            return redirect()->route('usersignin')->withErrors(['error' => 'User not found or session expired']);
         }
     }catch(Exception $e){
         redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
@@ -215,7 +216,7 @@ try{
         $appointment->save();
     
     }catch(Exception $e){
-        redirect()->back()->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
+        redirect()->route('usersignin')->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
     }
         
         
