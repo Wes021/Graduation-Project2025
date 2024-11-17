@@ -237,6 +237,8 @@ try{
         return redirect()->back()->with('success', 'Appointment status updated successfully!');
     }
 
+
+    
     public function editAppointment(Request $request){
             $request->validate([
                 'statuses' => 'required|integer|in:1,2,3', // Validate the status input

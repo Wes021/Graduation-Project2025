@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AppointmentPriceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Models\Appointments;
 
 /////////CustomerController/////////
 
@@ -51,9 +53,16 @@ Route::get('/',function(){
 
 
 
+Route::get('/index', [AppointmentPriceController::class, 'index'])->name('index');
+Route::post('/enetrprice', [AppointmentPriceController::class, 'addPrice'])->name('enetrprice');
+Route::post('/update', [AppointmentPriceController::class, 'editPrices'])->name('update');
+Route::post('/uptadepro',[AppointmentPriceController::class, 'addpromotion'])->name('uptadepro');
 
 
 
-// Route::get('/test', function () {
-//     return view('Home'); 
-// })->name('Home');
+
+
+
+// Route::get('/test/edit', function () {
+//     return view('AdminManagment'); 
+// });
