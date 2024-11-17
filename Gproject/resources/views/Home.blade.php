@@ -320,40 +320,12 @@
             
         </div>
         <hr>
-            {{-- <p>
-                Icons made by Freepik from www.flaticon.com And Font Awesome
-                </p>
-                <hr>
-                <p>
-                    © Copyright 2023 Strike a Pose Technologies Pvt. Ltd. All rights reserved. | 
-                    Terms Of Service | 
-                    Privacy Policy
-                    </p> --}}
+            
     </div>
 
 
 </body>
 </html>
 
-{{-- <script src="asset{{'frontend/scripts/indexNav.js'}}"></script>
-<script>
-     // <!------------------- navigation bar code ------------>
- let navbar=document.querySelector(".nav")
-    
-    window.onscroll=function(){
-        navbar.classList.add("sticky");
-    }
-// <!------------------- navigation bar code ------------>
 
-
-   function openStudioPage(){
-     window.location="./HTML/individualpage.html"
-   }
-
-   function openGalleryPage(){
-        window.location="./HTML/gallery.html"
-   }
-
-   document.querySelector(".cate").addEventListener("click",openGalleryPage)
-</script> --}}
 
