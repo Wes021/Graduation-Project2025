@@ -65,10 +65,11 @@ Route::post('/uptadepro',[ManagerController::class, 'addpromotion'])->name('upta
 Route::patch('/cancel/{price_id}/cancelPromotion', [ManagerController::class, 'cancelPromotion'])->name('cancel');
 //////Prices&Promotion//////
 
-//////Prices&Promotion//////
+//////EmployeeManagment//////
 Route::get('/indexx',[ManagerController::class,'index'])->name('indexx');
 Route::post('/addemployee',[ManagerController::class,'addEmployee'])->name('addemployee');
-//////Prices&Promotion//////
+Route::post('/editemployee',[ManagerController::class, 'editEmployee'])->name('editemployee');
+//////EmployeeManagment//////
 
 /////////ManagerController/////////
 

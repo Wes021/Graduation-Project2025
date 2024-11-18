@@ -44,28 +44,50 @@ class ManagerController extends Controller
 
     public function editEmployee(Request $request){
 
-        $validateData=$request->validate([
-            'name' =>  'required|string|max:255',
-            'username'=> 'required|string|max:255|unique:employees,username',
-            'password'=> 'required|max:255|unique:employees,password',
-            'phone'=> 'required|string|max:255|unique:employees,phone',
-            'gender'=>'required',
-            'email'=>'required',
-            
-        ]);
+        // Validate request
+    $validateData = $request->validate([
+        'userID' => 'required|exists:employees,employee_id',
+        'name' => 'nullable|string|max:255',
+        'username' => 'nullable|string|max:255|unique:employees,username,',
+        'password' => 'nullable|string|max:255',
+        'phone' => 'nullable|string|max:255|unique:employees,phone,',
+        'email' => 'nullable|string|email|max:255',
+    ]);
 
-        $admin = new Admin();
+    $em_id = $validateData['userID'];
+    $updateData = [];
 
-        $admin->name=$validateData['name'];
-        $admin->username=$validateData['username'];
-        $admin->password=$validateData['password'];
-        $admin->phone=$validateData['phone'];
-        $admin->gender=$validateData['gender'];
-        $admin->email=$validateData['email'];
+    // Add only the provided fields to the update array
+    if (!empty($validateData['name'])) {
+        $updateData['name'] = $validateData['name'];
+    }
+    if (!empty($validateData['username'])) {
+        $updateData['username'] = $validateData['username'];
+    }
+    if (!empty($validateData['password'])) {
+        $updateData['password'] = $validateData['password']; // Hash password
+    }
+    if (!empty($validateData['phone'])) {
+        $updateData['phone'] = $validateData['phone'];
+    }
+    if (!empty($validateData['email'])) {
+        $updateData['email'] = $validateData['email'];
+    }
 
-        $admin->save();
-        
-        return redirect()->back();
+    // Perform the update only if there's data to update
+    if (!empty($updateData)) {
+        $updated = DB::table('employees')
+            ->where('employee_id', $em_id)
+            ->update($updateData);
+
+        if (!$updated) {
+            return redirect()->back()->with('error', 'Failed to update the employee. Please try again.');
+        }
+
+        return redirect()->back()->with('success', 'Employee updated successfully!');
+    }
+
+    return redirect()->back()->with('info', 'No changes were made to the employee.');
 
     }
 

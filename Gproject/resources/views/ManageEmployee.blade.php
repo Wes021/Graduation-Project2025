@@ -62,8 +62,11 @@
         <section>
           <h1>Add emoloyee</h1>
     
-          <form action="{{route('addemployee')}}" method="post">
+          <form action="{{route('editemployee')}}" method="post">
             @csrf
+            <label for="userId">user id</label>
+            <input type="number" name="userID" id="">
+
             <label for="name">Name</label>
             <input type="text" name="name" id=""><br>
     
