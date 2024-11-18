@@ -15,7 +15,7 @@
         <ul class="sidenav-list">
           <li><a href="../studio/DashBoard.html"><span class="material-symbols-outlined"> dashboard_customize </span>DashBoard</a></li>
           <li><a href="{{route('AdminProfile')}}"><span class="material-symbols-outlined">account_circle</span>Profile</a></li>
-          {{-- <li><a href="{{route('')}}"><span class="material-symbols-outlined"> photo_library </span>Management</a></li> --}}
+          <li><a href="{{route('index')}}"><span class="material-symbols-outlined"> photo_library </span>Management</a></li>
           <li><a href="{{route('diyplayUserAppointment')}}"><span class="material-symbols-outlined"> beenhere </span>Appointments</a></li>
 
           <li><a href="{{route('AdminLogOut')}}"><span class="material-symbols-outlined"> logout </span>Logout</a></li>
