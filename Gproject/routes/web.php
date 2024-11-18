@@ -53,10 +53,14 @@ Route::get('/',function(){
 
 
 
-Route::get('/index', [AppointmentPriceController::class, 'index'])->name('index');
+Route::get('/index', [AppointmentPriceController::class, 'displayPrices'])->name('index');
 Route::post('/enetrprice', [AppointmentPriceController::class, 'addPrice'])->name('enetrprice');
 Route::post('/update', [AppointmentPriceController::class, 'editPrices'])->name('update');
+Route::post('/updatepromotion',[AppointmentPriceController::class, 'editpromotion'])->name('updatepromotion');
 Route::post('/uptadepro',[AppointmentPriceController::class, 'addpromotion'])->name('uptadepro');
+
+Route::patch('/cancel/{price_id}/cancelPromotion', [AppointmentPriceController::class, 'cancelPromotion'])->name('cancel');
+
 
 
 

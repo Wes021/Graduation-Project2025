@@ -88,26 +88,7 @@
           </form>
         </section>
             
-        <section>
-          <table class="table">
-            <thead>
-                <tr>
-                    <th>category</th>
-                    <th>Price</th>
-                    
-                    
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($appointments as $appointment)
-                    <tr>
-                        <td>{{ $appointment->user_name }}</td>
-                        <td>{{ $appointment->phone }}</td>        
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-        </section>
+
 
         <section>
           <h1>Add, edit and delete promotions</h1>
@@ -129,9 +110,69 @@
                 <option value="30">Other</option>
             </select>
             <input type="submit" value="add">
+          </form>
+            <form action="{{route('updatepromotion')}}" method="POST">
+              @csrf
+              {{-- @method("PUT") --}}
+              <label for="promotion_price">Price</label>
+              <input type="text" name="promotion_price" required>
+          
+              <label for="category_app_id">Select Category</label>
+              <select name="category_app_id" required>
+                  <option value="">Select an item</option>
+                  <option value="10">In Studio</option>
+                  <option value="20">Wedding</option>
+                  <option value="21">Holiday</option>
+                  <option value="22">Family</option>
+                  <option value="23">Birthday</option>
+                  <option value="24">Graduation</option>
+                  <option value="30">Other</option>
+              </select>
+              <input type="submit" value="add">
+            </form>
+
+
+
         </section>
           
           
+        <section>
+          <button type="submit">cancel</button>
+        </section>
+
+        <section>
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>category</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Promotion</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+              @foreach($prices as $price)
+                  <tr>
+                      <td>{{ $price->category }}</td>
+                      <td>{{ $price->price }}</td>
+                      <td>{{ $price->status }}</td>
+                      <td>{{ $price->promotion_price }}</td>
+                      <td>
+                          <form action="{{ route('cancel', $price->price_id) }}" method="POST">
+                              @csrf
+                              @method('PATCH')
+                              <button type="submit" class="btn btn-danger">Cancel</button>
+                          </form>
+                      </td>
+                  </tr>
+              @endforeach
+          </tbody>
+          
+        </table>
+        </section>
+
+
           </div>
 
             
