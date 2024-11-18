@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AppointmentPrice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Exception;
 use function Laravel\Prompts\table;
 
 class AppointmentPriceController extends Controller
@@ -58,6 +58,21 @@ class AppointmentPriceController extends Controller
         }
     
         return redirect()->back()->with('success', 'Price updated successfully!');
+    }
+
+    public function displayPrices(Request $request){
+
+        try{
+                $appointments = DB::table('appointments')
+                ->select()
+                ->get();
+    
+                return view('adminAppointment', compact('appointments'));
+            
+        }catch(Exception $e){
+            redirect()->back()->with('error','Faild fetching data'.$e->getMessage());
+        }
+
     }
 
     public function editpromotion(Request $request){

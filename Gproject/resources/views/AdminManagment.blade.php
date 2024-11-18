@@ -87,6 +87,27 @@
               <input type="submit" value="Update Price">
           </form>
         </section>
+            
+        <section>
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>category</th>
+                    <th>Price</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($appointments as $appointment)
+                    <tr>
+                        <td>{{ $appointment->user_name }}</td>
+                        <td>{{ $appointment->phone }}</td>        
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        </section>
 
         <section>
           <h1>Add, edit and delete promotions</h1>
