@@ -16,17 +16,26 @@ class Admin extends Model
 
 
 
-    ////////////setter&getterName////////////
-    public function getIdAttribute($value)
+    public function __construct(array $attributes = [])
     {
-        return ucfirst($value);
+        parent::__construct($attributes);
+
+        if (!isset($this->attributes['employee_id'])) {
+            $this->attributes['employee_id'] = $this->generateUniqueId();
+        }
     }
 
-    public function setIdAttribute($value)
+    // Function to generate a unique random ID
+    private function generateUniqueId()
     {
-        $this->attributes['employee_id'] = trim($value);
+        do {
+            $randomId = random_int(100, 999); // Adjust range as needed
+        } while (self::where('employee_id', $randomId)->exists()); // Ensure uniqueness
+
+        return $randomId;
     }
-    ////////////setter&getterName////////////
+
+    
 
 
     ////////////setter&getterName////////////

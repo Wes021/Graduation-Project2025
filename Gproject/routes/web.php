@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentPriceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\MananerController;
 use App\Models\Appointments;
 
 /////////CustomerController/////////
@@ -52,15 +54,23 @@ Route::get('/',function(){
 /////////Home Page/////////
 
 
+/////////MnagerController/////////
 
-Route::get('/index', [AppointmentPriceController::class, 'displayPrices'])->name('index');
-Route::post('/enetrprice', [AppointmentPriceController::class, 'addPrice'])->name('enetrprice');
-Route::post('/update', [AppointmentPriceController::class, 'editPrices'])->name('update');
-Route::post('/updatepromotion',[AppointmentPriceController::class, 'editpromotion'])->name('updatepromotion');
-Route::post('/uptadepro',[AppointmentPriceController::class, 'addpromotion'])->name('uptadepro');
+//////Prices&Promotion//////
+Route::get('/index', [ManagerController::class, 'displayPrices'])->name('index');
+Route::post('/enetrprice', [ManagerController::class, 'addPrice'])->name('enetrprice');
+Route::post('/update', [ManagerController::class, 'editPrices'])->name('update');
+Route::post('/updatepromotion',[ManagerController::class, 'editpromotion'])->name('updatepromotion');
+Route::post('/uptadepro',[ManagerController::class, 'addpromotion'])->name('uptadepro');
+Route::patch('/cancel/{price_id}/cancelPromotion', [ManagerController::class, 'cancelPromotion'])->name('cancel');
+//////Prices&Promotion//////
 
-Route::patch('/cancel/{price_id}/cancelPromotion', [AppointmentPriceController::class, 'cancelPromotion'])->name('cancel');
+//////Prices&Promotion//////
+Route::get('/indexx',[ManagerController::class,'index'])->name('indexx');
+Route::post('/addemployee',[ManagerController::class,'addEmployee'])->name('addemployee');
+//////Prices&Promotion//////
 
+/////////ManagerController/////////
 
 
 
