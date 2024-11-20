@@ -57,13 +57,14 @@
 
         <input type="submit" value="Add">
 
-
+      </form>
 
         <section>
-          <h1>Add emoloyee</h1>
+          <h1>edit emoloyee</h1>
     
           <form action="{{route('editemployee')}}" method="post">
             @csrf
+            @method('post')
             <label for="userId">user id</label>
             <input type="number" name="userID" id="">
 
@@ -94,8 +95,20 @@
     
         </form>
 
-    </form>
+        
 
+    </section>
+
+    <section>
+      <h1>Delete</h1>
+      <form action="{{route('deleteemployee')}}" method="POST">
+        @csrf
+          @method('post')
+          <label for="userId">user id</label>
+          <input type="number" name="userID" id="">
+
+          <input type="submit" value="delete">
+      </form>
     </section>
              
         </div>

@@ -6,6 +6,7 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\DB;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ManagerController extends Controller
 {
@@ -42,52 +43,71 @@ class ManagerController extends Controller
     }
 
 
-    public function editEmployee(Request $request){
+    public function editEmployee(Request $request)
+    {
+        // Validate the request data
+        $validatedData = $request->validate([
+            'userID' => 'required|exists:employees,employee_id',
+            'name' => 'nullable|string|max:255',
+            'username' => 'nullable|string|max:255|unique:employees,username,' . $request->userID . ',employee_id',
+            'password' => 'nullable|string|max:255',
+            'phone' => 'nullable|string|max:255|unique:employees,phone,' . $request->userID . ',employee_id',
+            'email' => 'nullable|string|email|max:255',
+        ]);
 
-        // Validate request
-    $validateData = $request->validate([
-        'userID' => 'required|exists:employees,employee_id',
-        'name' => 'nullable|string|max:255',
-        'username' => 'nullable|string|max:255|unique:employees,username,',
-        'password' => 'nullable|string|max:255',
-        'phone' => 'nullable|string|max:255|unique:employees,phone,',
-        'email' => 'nullable|string|email|max:255',
-    ]);
+        $em_id = $validatedData['userID'];
+        $updateData = [];
 
-    $em_id = $validateData['userID'];
-    $updateData = [];
-
-    // Add only the provided fields to the update array
-    if (!empty($validateData['name'])) {
-        $updateData['name'] = $validateData['name'];
-    }
-    if (!empty($validateData['username'])) {
-        $updateData['username'] = $validateData['username'];
-    }
-    if (!empty($validateData['password'])) {
-        $updateData['password'] = $validateData['password']; // Hash password
-    }
-    if (!empty($validateData['phone'])) {
-        $updateData['phone'] = $validateData['phone'];
-    }
-    if (!empty($validateData['email'])) {
-        $updateData['email'] = $validateData['email'];
-    }
-
-    // Perform the update only if there's data to update
-    if (!empty($updateData)) {
-        $updated = DB::table('employees')
-            ->where('employee_id', $em_id)
-            ->update($updateData);
-
-        if (!$updated) {
-            return redirect()->back()->with('error', 'Failed to update the employee. Please try again.');
+        // Add fields to the update array only if they're provided
+        if (!empty($validatedData['name'])) {
+            $updateData['name'] = $validatedData['name'];
+        }
+        if (!empty($validatedData['username'])) {
+            $updateData['username'] = $validatedData['username'];
+        }
+        if (!empty($validatedData['password'])) {
+            $updateData['password'] = Hash::make($validatedData['password']); // Hash password before saving
+        }
+        if (!empty($validatedData['phone'])) {
+            $updateData['phone'] = $validatedData['phone'];
+        }
+        if (!empty($validatedData['email'])) {
+            $updateData['email'] = $validatedData['email'];
         }
 
-        return redirect()->back()->with('success', 'Employee updated successfully!');
+        // Perform the update only if there is data to update
+        if (!empty($updateData)) {
+            $updated = DB::table('employees')
+                ->where('employee_id', $em_id)
+                ->update($updateData);
+
+            if (!$updated) {
+                return redirect()->back()->with('error', 'Failed to update the employee. Please try again.');
+            }
+
+            return redirect()->back()->with('success', 'Employee updated successfully!');
+        }
+
+        return redirect()->back()->with('info', 'No changes were made to the employee.');
     }
 
-    return redirect()->back()->with('info', 'No changes were made to the employee.');
+    public function deleteemployee(Request $request){
+        $validatedData = $request->validate([
+            'userID' => 'required|exists:employees,employee_id',
+        ]);
+    
+        $em_id = $validatedData['userID'];
+    
+        $deleted = DB::table('employees')
+                    ->where('employee_id', $em_id)
+                    ->delete();
+    
+        // Check if the delete was successful
+        if ($deleted) {
+            
+        } else {
+           
+        }
 
     }
 
