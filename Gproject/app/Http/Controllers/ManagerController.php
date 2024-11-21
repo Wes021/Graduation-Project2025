@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Inventory;
+use App\Models\Products;
 use Illuminate\Support\Facades\DB;
 use Exception;
 use Illuminate\Http\Request;
@@ -111,27 +113,107 @@ class ManagerController extends Controller
 
     }
 
+    public function productindex(){
+        return view('ManageProducts');
+    }
+
+
+    public function addProduct(Request $request){
+
+        $validatedData=$request->validate([
+            'product_name' =>  'required|string|max:255|unique:product',
+            'price'=> 'required|string',
+            'description'=> 'required',
+            'quantity'=> 'required|max:255',
+
+        ]);
+
+        $product = new Products();
+        $product->product_name = $validatedData['product_name'];
+        $product->price = $validatedData['price'];
+        $product->description = $validatedData['description'];
+        $product->save();
+
+        // Create the inventory record linked to the product
+        $inventory = new Inventory();
+        $inventory->product_id = $product->product_id; // Assuming product_id is auto-incremented
+        $inventory->quantity_in_stock = $validatedData['quantity'];
+        $product->save();
+        $inventory->save();
+        
+
+       return redirect()->back();
+        
+
+    }
+
+    public function editProduct(Request $request)
+    {
+        // Validate the request data
+        $validatedData = $request->validate([
+            'product_id' => 'required|exists:product,product_id',
+            'product_name' => 'nullable|string|max:255',
+            'price' => 'nullable|string',
+            'description' => 'nullable|string|max:255',
+            'quantity' => 'nullable|string',
+            
+        ]);
+
+        $pro_id = $validatedData['product_id'];
+        $updateData = [];
+
+        // Add fields to the update array only if they're provided
+        if (!empty($validatedData['product_name'])) {
+            $updateData['product_name'] = $validatedData['product_name'];
+        }
+        if (!empty($validatedData['price'])) {
+            $updateData['price'] = $validatedData['price'];
+        }
+        if (!empty($validatedData['description'])) {
+            $updateData['description'] =$validatedData['description']; // Hash password before saving
+        }
+        if (!empty($validatedData['quantity'])) {
+            $updateData['quantity'] = $validatedData['quantity'];
+        }
+        
+
+        // Perform the update only if there is data to update
+        if (!empty($updateData)) {
+            $updated = DB::table('product')
+                ->where('product_id', $pro_id)
+                ->update($updateData);
+
+            if (!$updated) {
+                return redirect()->back()->with('error', 'Failed to update the employee. Please try again.');
+            }
+
+            return redirect()->back()->with('success', 'Employee updated successfully!');
+        }
+
+        return redirect()->back()->with('info', 'No changes were made to the employee.');
+    }
 
 
 
+    public function deleteProduct(Request $request){
+        $validatedData = $request->validate([
+            'product_id' => 'required|exists:product,product_id',
+        ]);
+    
+        $pro_id = $validatedData['product_id'];
+    
+        $deleted = DB::table('product')
+                    ->where('product_id', $pro_id)
+                    ->delete();
+    
+        // Check if the delete was successful
+        if ($deleted) {
+            redirect()->back();
+        } else {
+           
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 
