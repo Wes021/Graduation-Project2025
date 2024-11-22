@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <form action="{{ route('editproduct', $product->product_id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -20,9 +21,10 @@
         <label for="description">Description:</label>
         <textarea id="description" name="description">{{ old('description', $product->description) }}</textarea><br>
     
-        
-    
-        <br>
+        <label for="quantity_in_stock">Quantity:</label>
+        <input type="number" id="price" name="quantity_in_stock" value="{{ old('quantity_in_stock', $product->quantity_in_stock) }}" required><br>
+
+    <br>
     
         <button type="submit">Update Product</button>
     </form>
