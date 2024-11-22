@@ -1,11 +1,15 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\EmployeeManagment;
+use App\Http\Controllers\Employee\AdminController;
 use App\Http\Controllers\AppointmentPriceController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\User\CustomerController;
+use App\Http\Controllers\Admin\ManagerController;
+use App\Http\Controllers\Admin\PricesandPromotionManagment;
+use App\Http\Controllers\Admin\ProductManagment;
 use App\Http\Controllers\MananerController;
+use App\Http\Controllers\User\UserAppointments;
 use App\Models\Appointments;
 
 /////////CustomerController/////////
@@ -23,10 +27,10 @@ Route::get('/UserProfile',[CustomerController::class,'userprofile'])->name('User
 //////UserSignIn//////
 
 //////UserAppointment//////
-Route::post('/appointment',[CustomerController::class,'userAppointment'])->name('appointmentSubmit');
-Route::get('/myappointments',[CustomerController::class,'userAppointments'])->name('myappointments');
+Route::post('/appointment',[UserAppointments::class,'userAppointment'])->name('appointmentSubmit');
+Route::get('/myappointments',[UserAppointments::class,'userAppointments'])->name('myappointments');
 Route::get('/appointmentpage',[CustomerController::class,'appIndex'])->name('appointmentpage');
-Route::patch('/changestatuss/{appointment_id}/cancel', [CustomerController::class, 'cancel'])->name('changestatuss');
+Route::patch('/changestatuss/{appointment_id}/cancel', [UserAppointments::class, 'cancel'])->name('changestatuss');
 //////UserAppointment//////
 
 /////////CustomerController/////////
@@ -57,29 +61,33 @@ Route::get('/',function(){
 /////////MnagerController/////////
 
 //////Prices&Promotion//////
-Route::get('/index', [ManagerController::class, 'displayPrices'])->name('index');
-Route::post('/enetrprice', [ManagerController::class, 'addPrice'])->name('enetrprice');
-Route::post('/update', [ManagerController::class, 'editPrices'])->name('update');
-Route::post('/updatepromotion',[ManagerController::class, 'editpromotion'])->name('updatepromotion');
-Route::post('/uptadepro',[ManagerController::class, 'addpromotion'])->name('uptadepro');
-Route::patch('/cancel/{price_id}/cancelPromotion', [ManagerController::class, 'cancelPromotion'])->name('cancel');
+Route::get('/index', [PricesandPromotionManagment::class, 'displayPrices'])->name('index');
+Route::post('/enetrprice', [PricesandPromotionManagment::class, 'addPrice'])->name('enetrprice');
+Route::post('/update', [PricesandPromotionManagment::class, 'editPrices'])->name('update');
+Route::post('/updatepromotion',[PricesandPromotionManagment::class, 'editpromotion'])->name('updatepromotion');
+Route::post('/uptadepro',[PricesandPromotionManagment::class, 'addpromotion'])->name('uptadepro');
+Route::patch('/cancel/{price_id}/cancelPromotion', [PricesandPromotionManagment::class, 'cancelPromotion'])->name('cancel');
 //////Prices&Promotion//////
 
 //////EmployeeManagment//////
-Route::get('/indexx',[ManagerController::class,'index'])->name('indexx');
-Route::post('/addemployee',[ManagerController::class,'addEmployee'])->name('addemployee');
-Route::post('/editemployee',[ManagerController::class, 'editEmployee'])->name('editemployee');
-Route::post('/deleteemployee', [ManagerController::class,'deleteemployee'])->name('deleteemployee');
+Route::get('/indexx',[EmployeeManagment::class,'index'])->name('indexx');
+Route::post('/addemployee',[EmployeeManagment::class,'addEmployee'])->name('addemployee');
+Route::post('/editemployee',[EmployeeManagment::class, 'editEmployee'])->name('editemployee');
+Route::post('/deleteemployee', [EmployeeManagment::class,'deleteemployee'])->name('deleteemployee');
 //////EmployeeManagment//////
 
 //////ProductManagment//////
-Route::get('/addproductindex',[ManagerController::class,'productindex'])->name('addproductindex');
-Route::post(('/addproduct'),[ManagerController::class,'addProduct'])->name('addproduct');
-Route::post(('/editproduct'),[ManagerController::class,'editProduct'])->name('editproduct');
-Route::post(('/deleteproducts'),[ManagerController::class,'deleteProduct'])->name('deleteproducts');
+
 //////ProdutManagment//////
 
+Route::get(('/addproductindex'),[ProductManagment::class,'productindex'])->name('addproductindex');
+Route::post(('/addproduct'),[ProductManagment::class,'addProduct'])->name('addproduct');
 
+Route::get('/editproductt/{product_id}', [ProductManagment::class, 'showEditForm'])->name('showEditForm');
+Route::put(('/editproduct/{product_id}'),[ProductManagment::class,'editProduct'])->name('editproduct');
+
+Route::post(('/deleteproducts'),[ProductManagment::class,'deleteProduct'])->name('deleteproducts');
+Route::get(('/displayProducts'),[ProductManagment::class,'displayProducts'])->name('displayProducts');
 
 /////////ManagerController/////////
 

@@ -57,8 +57,8 @@
             @csrf
             @method('post')
 
-            <label for="product_id">Product ID</label>
-            <input type="number" name="product_id">
+            {{-- <label for="product_id">Product ID</label>
+            <input type="number" name="product_id"> --}}
 
             <label for="product_name">product name</label>
         <input type="text" name="product_name" id=""><br>

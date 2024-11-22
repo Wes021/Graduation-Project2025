@@ -1,6 +1,6 @@
 <?php
-
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Employee;
+use App\Http\Controllers\Controller;
 
 
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class AdminController extends Controller
 
     public function AdminSigninIndex()
     {
-        return view('signinAdmin');
+        return view('EmployeeView/signinAdmin');
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function AdminSignin(Request $request)
@@ -52,7 +52,7 @@ class AdminController extends Controller
         try{
         if(session()->has('Auser')){
             $admindata=session('Auser');
-            return view('AdminProfile',['admindata'=>$admindata]);
+            return view('EmployeeView/AdminProfile',['admindata'=>$admindata]);
         } else{
             return redirect()->route('AdminSignin')->withErrors('Session data not found.');
         }
@@ -93,7 +93,7 @@ class AdminController extends Controller
             ->select('Appointments.appointment_id as appointmentid','user.phone as phone' ,'user.name as user_name', 'employees.name as employee_name', 'category_app.category_name as category_name', 'appointment_time.date as appointment_date' ,'appointment_statuses.status_name as status','appointment_statuses.appointment_statuses_id as appointment_statuses_id')
             ->get();
 
-            return view('adminAppointment', compact('appointments'));
+            return view('EmployeeView/adminAppointment', compact('appointments'));
         }
     }catch(Exception $e){
         redirect()->back()->with('error','Faild fetching data'.$e->getMessage());

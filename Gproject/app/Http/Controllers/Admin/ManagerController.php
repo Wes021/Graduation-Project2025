@@ -1,6 +1,6 @@
 <?php
-
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 
 use App\Models\Admin;
 use App\Models\Inventory;
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class ManagerController extends Controller
 {
     public function index(){
-        return view('ManageEmployee');
+        return view('AdminView/ManageEmployee');
     }
 
 
@@ -114,7 +114,7 @@ class ManagerController extends Controller
     }
 
     public function productindex(){
-        return view('ManageProducts');
+        return view('AdminView/ManageProducts');
     }
 
 
@@ -226,7 +226,7 @@ class ManagerController extends Controller
                 ->select('appointment_prices.base_price as price','appointment_prices.promotion_price as promotion_price','appointment_price_status.status_name as status', 'category_app.category_name as category', 'appointment_prices.price_id as price_id')
                 ->get();
     
-                return view('AdminManagment', compact('prices'));
+                return view('AdminView/AdminManagment', compact('prices'));
             
         }catch(Exception $e){
             redirect()->back()->with('error','Faild fetching data'.$e->getMessage());
