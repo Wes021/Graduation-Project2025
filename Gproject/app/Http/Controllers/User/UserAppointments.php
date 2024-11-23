@@ -54,7 +54,8 @@ class UserAppointments extends Controller
         $validatedData = $request->validate([
             'categories' => 'required|exists:category_app,category_app_id',
             'date' => 'required|date',              
-            'time' => 'required|date_format:H:i',    
+            'time' => 'required|date_format:H:i', 
+               
         ]);
     
         
@@ -69,7 +70,7 @@ class UserAppointments extends Controller
          return redirect()->back()->withErrors(['error' => 'You can only create one appointment.']);
         }
         
-        $assignEmployee=Admin::inRandomOrder()->first();
+        //$assignEmployee=Admin::inRandomOrder()->first();
 
         $appointmenttime->date=$validatedData['date'];
         $appointmenttime->time=$validatedData['time'];
@@ -80,11 +81,19 @@ class UserAppointments extends Controller
         $appointment->category_app_id = $request->input('categories');
         $appointment->location_id = $location->location_id;
         $appointment->user_id = $userData['user_id'];
-        $appointment->employee_id=$assignEmployee->employee_id;
+        //$appointment->employee_id=$assignEmployee->employee_id;
         $location->save();
         $appointmenttime->save();
         $appointment->save();
     
+
+        $assignEmployees = Admin::inRandomOrder()->limit(3)->get(); // Select 3 random employees
+foreach ($assignEmployees as $employee) {
+    DB::table('employees')
+        ->where('employee_id', $employee->employee_id) // Update only this specific employee
+        ->update(['appointment_id' => $appointment->appointment_id]);
+}
+
     }catch(Exception $e){
         redirect()->route('usersignin')->with('error','Sign up faild, check your inserted info.'.$e->getMessage())->withInput();
     }

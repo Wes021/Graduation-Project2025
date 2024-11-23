@@ -34,6 +34,8 @@ class CustomerController extends Controller
             'phone'=> 'required|string|max:255|unique:user,phone',
             'gender'=>'required',
             
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
 
             'governorate'=>'string|max:255',
             'city'=>'string|max:255',
@@ -59,6 +61,9 @@ class CustomerController extends Controller
         $customer->gender=$validateData['gender'];
         $customer->address_Id = $address->address_Id;
         
+        $customer->latitude = $validateData['latitude'];
+        $customer->longitude = $validateData['longitude'];
+
         $customer->save();
         
 

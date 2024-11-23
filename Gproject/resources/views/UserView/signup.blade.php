@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="{{ asset('frontend/styles/userSignup.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/styles/navbar-footer.css') }}">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- CSS for map container -->
+    <style>
+        #map {
+            height: 300px; /* Height of the map container */
+            width: 100%;   /* Width of the map container */
+        }
+    </style>
+
 </head>
 
 <body>
@@ -81,6 +90,9 @@
             <p>Street</p>
             <input type="text" name="street">
 
+            <input type="hidden" name="latitude" id="latitude">
+            <input type="hidden" name="longitude" id="longitude">
+
               <p class="body">Stay signed in for 30 days</p>
             
               
@@ -90,6 +102,7 @@
   
             <input type="submit" class="btn" value="Create account"></input>
           </form>
+          <div id="map"></div>
            
   
            
@@ -138,7 +151,33 @@
                   </p>
       </div>
   
-  
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        // Initialize the map centered at some coordinates
+        var map = L.map('map').setView([51.505, -0.09], 13); // Set initial coordinates and zoom level
+
+        // Tile layer for OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Marker for the initial location
+        var marker = L.marker([32, 36]).addTo(map);
+
+        // Event listener for when the user clicks on the map
+        map.on('click', function(e) {
+            var lat = e.latlng.lat;
+            var lon = e.latlng.lng;
+
+            // Update the marker location
+            marker.setLatLng([lat, lon]);
+
+            // Set the hidden input values to the clicked location coordinates
+            document.getElementById('latitude').value = lat;
+            document.getElementById('longitude').value = lon;
+        });
+    </script>
   
     </body>
   </html>
