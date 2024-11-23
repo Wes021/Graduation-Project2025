@@ -50,15 +50,15 @@
 
       </form>
 
-        <section>
+        {{-- <section>
           <h1>edit Product</h1>
     
           <form action="{{route('editproduct')}}" method="post">
             @csrf
             @method('post')
 
-            {{-- <label for="product_id">Product ID</label>
-            <input type="number" name="product_id"> --}}
+            <label for="product_id">Product ID</label>
+            <input type="number" name="product_id">
 
             <label for="product_name">product name</label>
         <input type="text" name="product_name" id=""><br>
@@ -79,7 +79,7 @@
 
         
 
-    </section>
+    </section> --}}
 
     <section>
       <h1>Delete Product</h1>
