@@ -47,7 +47,6 @@ class EmployeeManagment extends Controller
 
     public function editEmployee(Request $request)
     {
-        // Validate the request data
         $validatedData = $request->validate([
             'userID' => 'required|exists:employees,employee_id',
             'name' => 'nullable|string|max:255',
@@ -60,7 +59,6 @@ class EmployeeManagment extends Controller
         $em_id = $validatedData['userID'];
         $updateData = [];
 
-        // Add fields to the update array only if they're provided
         if (!empty($validatedData['name'])) {
             $updateData['name'] = $validatedData['name'];
         }
@@ -68,7 +66,7 @@ class EmployeeManagment extends Controller
             $updateData['username'] = $validatedData['username'];
         }
         if (!empty($validatedData['password'])) {
-            $updateData['password'] = Hash::make($validatedData['password']); // Hash password before saving
+            $updateData['password'] = Hash::make($validatedData['password']); 
         }
         if (!empty($validatedData['phone'])) {
             $updateData['phone'] = $validatedData['phone'];
@@ -77,7 +75,7 @@ class EmployeeManagment extends Controller
             $updateData['email'] = $validatedData['email'];
         }
 
-        // Perform the update only if there is data to update
+       
         if (!empty($updateData)) {
             $updated = DB::table('employees')
                 ->where('employee_id', $em_id)
@@ -104,7 +102,7 @@ class EmployeeManagment extends Controller
                     ->where('employee_id', $em_id)
                     ->delete();
     
-        // Check if the delete was successful
+       
         if ($deleted) {
             
         } else {

@@ -47,7 +47,6 @@ class ManagerController extends Controller
 
     public function editEmployee(Request $request)
     {
-        // Validate the request data
         $validatedData = $request->validate([
             'userID' => 'required|exists:employees,employee_id',
             'name' => 'nullable|string|max:255',
@@ -60,7 +59,7 @@ class ManagerController extends Controller
         $em_id = $validatedData['userID'];
         $updateData = [];
 
-        // Add fields to the update array only if they're provided
+        
         if (!empty($validatedData['name'])) {
             $updateData['name'] = $validatedData['name'];
         }
@@ -68,7 +67,7 @@ class ManagerController extends Controller
             $updateData['username'] = $validatedData['username'];
         }
         if (!empty($validatedData['password'])) {
-            $updateData['password'] = Hash::make($validatedData['password']); // Hash password before saving
+            $updateData['password'] = Hash::make($validatedData['password']); 
         }
         if (!empty($validatedData['phone'])) {
             $updateData['phone'] = $validatedData['phone'];
@@ -77,7 +76,7 @@ class ManagerController extends Controller
             $updateData['email'] = $validatedData['email'];
         }
 
-        // Perform the update only if there is data to update
+        
         if (!empty($updateData)) {
             $updated = DB::table('employees')
                 ->where('employee_id', $em_id)
@@ -104,7 +103,6 @@ class ManagerController extends Controller
                     ->where('employee_id', $em_id)
                     ->delete();
     
-        // Check if the delete was successful
         if ($deleted) {
             
         } else {
@@ -134,9 +132,9 @@ class ManagerController extends Controller
         $product->description = $validatedData['description'];
         $product->save();
 
-        // Create the inventory record linked to the product
+        
         $inventory = new Inventory();
-        $inventory->product_id = $product->product_id; // Assuming product_id is auto-incremented
+        $inventory->product_id = $product->product_id; 
         $inventory->quantity_in_stock = $validatedData['quantity'];
         $product->save();
         $inventory->save();
@@ -149,7 +147,7 @@ class ManagerController extends Controller
 
     public function editProduct(Request $request)
     {
-        // Validate the request data
+        
         $validatedData = $request->validate([
             'product_id' => 'required|exists:product,product_id',
             'product_name' => 'nullable|string|max:255',
@@ -162,7 +160,7 @@ class ManagerController extends Controller
         $pro_id = $validatedData['product_id'];
         $updateData = [];
 
-        // Add fields to the update array only if they're provided
+        
         if (!empty($validatedData['product_name'])) {
             $updateData['product_name'] = $validatedData['product_name'];
         }
@@ -170,14 +168,14 @@ class ManagerController extends Controller
             $updateData['price'] = $validatedData['price'];
         }
         if (!empty($validatedData['description'])) {
-            $updateData['description'] =$validatedData['description']; // Hash password before saving
+            $updateData['description'] =$validatedData['description']; 
         }
         if (!empty($validatedData['quantity'])) {
             $updateData['quantity'] = $validatedData['quantity'];
         }
         
 
-        // Perform the update only if there is data to update
+        
         if (!empty($updateData)) {
             $updated = DB::table('product')
                 ->where('product_id', $pro_id)
@@ -206,7 +204,7 @@ class ManagerController extends Controller
                     ->where('product_id', $pro_id)
                     ->delete();
     
-        // Check if the delete was successful
+        
         if ($deleted) {
             redirect()->back();
         } else {
@@ -243,11 +241,11 @@ class ManagerController extends Controller
         'category_app_id' => 'required'
     ]);
 
-    // Get the category_app_id and the new base price
+    
     $category_app_id = $request->input('category_app_id');
     $new_base_price = $request->input('editBaseprice');
 
-    // Update the base price where the category_app_id matches
+    
     $updated = DB::table('appointment_prices')
         ->where('category_app_id', $category_app_id)
         ->update(['base_price' => $new_base_price]);

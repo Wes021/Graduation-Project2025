@@ -13,7 +13,7 @@ class AppointmentPrice extends Model
     ];
 
 
-    // Constructor to set ID
+    
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -23,12 +23,12 @@ class AppointmentPrice extends Model
         }
     }
 
-    // Function to generate a unique random ID
+    
     private function generateUniqueId()
     {
         do {
-            $randomId = random_int(100, 999); // Adjust range as needed
-        } while (self::where('price_id', $randomId)->exists()); // Ensure uniqueness
+            $randomId = random_int(100, 999); 
+        } while (self::where('price_id', $randomId)->exists()); 
 
         return $randomId;
     }

@@ -106,17 +106,17 @@ class AdminController extends Controller
     public function changeStatus(Request $request, $appointment_id){
         try{
         $request->validate([
-            'statuses' => 'required|integer|in:1,2,3', // Validate the status input
+            'statuses' => 'required|integer|in:1,2,3', 
         ]);
     
-        // Retrieve the appointment based on the ID
+       
         $appointment = DB::table('Appointments')->where('appointment_id', $appointment_id)->first();
     
         if (!$appointment) {
             return redirect()->back()->with('error', 'Appointment not found.');
         }
     
-        // Update the appointment status
+        
         DB::table('Appointments')
             ->where('appointment_id', $appointment_id)
             ->update([

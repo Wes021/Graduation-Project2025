@@ -16,7 +16,7 @@ class ProductManagment extends Controller
 
     public function showEditForm($product_id)
 {
-    // Fetch the product from the database based on the product_id
+    
     $product = DB::table('product')
         ->leftJoin('inventory', 'inventory.product_id', '=', 'product.product_id')
         ->select(
@@ -27,9 +27,9 @@ class ProductManagment extends Controller
             'inventory.quantity_in_stock as quantity_in_stock'
         )
         ->where('product.product_id', $product_id)
-        ->first();  // Use first() to get a single product record
+        ->first();  
 
-    // Pass the product to the view
+    
     return view('AdminView.EditProducts', compact('product'));
 }
 
@@ -73,9 +73,9 @@ class ProductManagment extends Controller
         $product->description = $validatedData['description'];
         $product->save();
 
-        // Create the inventory record linked to the product
+        
         $inventory = new Inventory();
-        $inventory->product_id = $product->product_id; // Assuming product_id is auto-incremented
+        $inventory->product_id = $product->product_id; 
         $inventory->quantity_in_stock = $validatedData['quantity'];
         $product->save();
         $inventory->save();
@@ -88,7 +88,6 @@ class ProductManagment extends Controller
 
     public function editProduct(Request $request, $product_id)
 {
-    // Validate the request data
     $validatedData = $request->validate([
         'product_name' => 'nullable|string|max:255',
         'price' => 'nullable|string',
@@ -96,11 +95,11 @@ class ProductManagment extends Controller
         'quantity_in_stock' => 'nullable|integer',
     ]);
 
-    // Arrays for the fields to be updated
+    
     $updateProductData = [];
     $updateInventoryData = [];
 
-    // Add fields to the product update array if provided
+    
     if (!empty($validatedData['product_name'])) {
         $updateProductData['product_name'] = $validatedData['product_name'];
     }
@@ -111,12 +110,12 @@ class ProductManagment extends Controller
         $updateProductData['description'] = $validatedData['description'];
     }
 
-    // Add fields to the inventory update array if provided
+    
     if (!empty($validatedData['quantity_in_stock'])) {
         $updateInventoryData['quantity_in_stock'] = $validatedData['quantity_in_stock'];
     }
 
-    // Perform the updates if there is data to update
+    
     $productUpdated = false;
     if (!empty($updateProductData)) {
         $productUpdated = DB::table('product')
@@ -131,12 +130,12 @@ class ProductManagment extends Controller
             ->update($updateInventoryData);
     }
 
-    // Check if either update was successful and return appropriate message
+    
     if ($productUpdated || $inventoryUpdated) {
         return redirect()->back()->with('success', 'Product updated successfully!');
     }
 
-    // If no changes were made
+    
     return redirect()->back()->with('info', 'No changes were made to the product.');
 }
 
@@ -154,7 +153,7 @@ class ProductManagment extends Controller
                     ->where('product_id', $pro_id)
                     ->delete();
     
-        // Check if the delete was successful
+        
         if ($deleted) {
             redirect()->back();
         } else {

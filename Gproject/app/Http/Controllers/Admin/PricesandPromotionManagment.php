@@ -37,11 +37,11 @@ class PricesandPromotionManagment extends Controller
         'category_app_id' => 'required'
     ]);
 
-    // Get the category_app_id and the new base price
+    
     $category_app_id = $request->input('category_app_id');
     $new_base_price = $request->input('editBaseprice');
 
-    // Update the base price where the category_app_id matches
+    
     $updated = DB::table('appointment_prices')
         ->where('category_app_id', $category_app_id)
         ->update(['base_price' => $new_base_price]);
