@@ -1,0 +1,146 @@
+{
+  "brand": "PhotoStudio",
+  "nav": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "profile": "Profil",
+    "logout": "Abmelden"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "signup": "Registrieren",
+    "forgotPassword": "Passwort vergessen?",
+    "rememberMe": "Angemeldet bleiben",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?"
+  },
+  "hero": {
+    "title": "Erfassen Sie Ihre perfekten Momente",
+    "subtitle": "Professionelle Fotografie für alle Ihre besonderen Anlässe",
+    "cta": "Termin buchen"
+  },
+  "features": {
+    "title": "Warum uns wählen",
+    "quality": {
+      "title": "Premium-Qualität",
+      "description": "Modernste Ausrüstung und professionelle Bearbeitung für atemberaubende Ergebnisse"
+    },
+    "time": {
+      "title": "Flexible Terminplanung",
+      "description": "Bequeme Buchungsoptionen, die zu Ihrem vollen Zeitplan passen"
+    },
+    "experience": {
+      "title": "Erfahrenes Team",
+      "description": "Jahre der Erfahrung im Einfangen der schönen Momente des Lebens"
+    }
+  },
+  "gallery": {
+    "title": "Unser Portfolio"
+  },
+  "services": {
+    "header": {
+      "title": "Unsere Dienstleistungen",
+      "subtitle": "Entdecken Sie unsere umfassende Palette professioneller Fotografie-Dienstleistungen"
+    },
+    "portrait": {
+      "title": "Porträtfotografie",
+      "description": "Meisterschaft im Einfangen der Essenz und Persönlichkeit von Einzelpersonen oder Gruppen"
+    },
+    "landscape": {
+      "title": "Landschaftsfotografie",
+      "description": "Expertise im Einfangen von malerischen Ausblicken und natürlicher Schönheit"
+    },
+    "wildlife": {
+      "title": "Tierfotografie",
+      "description": "Geschick im Fotografieren von Tieren in ihrem natürlichen Lebensraum"
+    },
+    "macro": {
+      "title": "Makrofotografie",
+      "description": "Spezialisierung auf extreme Nahaufnahmen"
+    },
+    "event": {
+      "title": "Eventfotografie",
+      "description": "Professionelle Dokumentation von Veranstaltungen"
+    },
+    "fashion": {
+      "title": "Modefotografie",
+      "description": "Professionelle Mode- und Stilfotografie"
+    },
+    "product": {
+      "title": "Produktfotografie",
+      "description": "Professionelle Produkt- und E-Commerce-Fotografie"
+    },
+    "food": {
+      "title": "Foodfotografie",
+      "description": "Professionelle Lebensmittel- und Getränkefotografie"
+    },
+    "bookNow": "Jetzt buchen",
+    "aboutService": "Über diesen Service",
+    "includedFeatures": "Enthaltene Funktionen"
+  },
+  "booking": {
+    "title": "Termin buchen",
+    "edit": "Buchung bearbeiten",
+    "serviceLabel": "Service auswählen",
+    "selectService": "Wählen Sie einen Service",
+    "cityLabel": "Stadt auswählen",
+    "selectCity": "Wählen Sie eine Stadt",
+    "dateLabel": "Datum auswählen",
+    "timeLabel": "Uhrzeit auswählen",
+    "selectTime": "Wählen Sie eine Uhrzeit",
+    "submit": "Buchung bestätigen",
+    "status": {
+      "pending": "Ausstehend",
+      "confirmed": "Bestätigt",
+      "completed": "Abgeschlossen",
+      "cancelled": "Storniert"
+    },
+    "cancel": "Buchung stornieren",
+    "delete": "Buchung löschen",
+    "noBookings": "Keine Buchungen gefunden"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "bookings": "Buchungen",
+    "orders": "Bestellungen",
+    "bookingId": "Buchungs-ID",
+    "service": "Service",
+    "date": "Datum",
+    "time": "Uhrzeit",
+    "city": "Stadt",
+    "status": "Status",
+    "actions": "Aktionen",
+    "confirm": "Bestätigen",
+    "reject": "Ablehnen",
+    "filters": "Filter",
+    "filterByCity": "Nach Stadt filtern",
+    "filterByService": "Nach Service filtern",
+    "filterByStatus": "Nach Status filtern",
+    "allCities": "Alle Städte",
+    "allServices": "Alle Services",
+    "allStatuses": "Alle Status",
+    "noBookingsFound": "Keine Buchungen gefunden"
+  },
+  "cities": {
+    "amman": "Amman",
+    "zarqa": "Zarqa",
+    "irbid": "Irbid",
+    "aqaba": "Aqaba",
+    "madaba": "Madaba",
+    "salt": "Salt",
+    "jerash": "Jerash",
+    "ajloun": "Ajloun",
+    "mafraq": "Mafraq",
+    "karak": "Karak",
+    "tafilah": "Tafilah",
+    "maan": "Ma'an",
+    "ramtha": "Ramtha",
+    "sahab": "Sahab",
+    "russeifa": "Russeifa",
+    "fuheis": "Fuheis",
+    "mahis": "Mahis",
+    "dead_sea": "Totes Meer",
+    "petra": "Petra",
+    "wadi_rum": "Wadi Rum"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "notifications": {
+    "title": "Notifications",
+    "bookingCancelled": "Booking cancelled successfully",
+    "bookingSuccess": "Booking successful",
+    "bookingPaymentCompleted": "Payment completed successfully",
+    "bookingConfirmed": "Booking confirmed successfully",
+
+    "empty": "No notifications",
+    "markAllRead": "Mark all as read",
+    "remove": "Remove",
+    "orderReceived": "Order Received",
+    "orderReceivedDetails": "Your order has been received and will be processed soon",
+    "orderShipping": "Order Processing",
+    "orderShippingDetails": "We are currently preparing your order for shipping",
+    "orderOnWay": "Out for Delivery",
+    "orderOnWayDetails": "Your order is on its way to you",
+    "orderDelivered": "Order Delivered",
+    "orderDeliveredDetails": "Your order has been delivered successfully",
+    "orderSuccess": "Order Confirmed Successfully",
+    "orderConfirmation": "Thank you! We'll start processing your order right away",
+    "paymentCompleted": "Payment Completed Successfully",
+    "paymentDetails": "Payment has been processed successfully and your order is confirmed",
+    "purchaseSuccess": "Purchase Completed Successfully",
+    "purchaseDetails": "Your purchase has been confirmed and will be processed",
+    "order": {
+      "confirmed": "Order Confirmed",
+      "shipped": "Order Shipped",
+      "delivered": "Order Delivered",
+      "cancelled": "Order Cancelled",
+      "status": {
+        "confirmedDetails": "Your order has been confirmed and is being processed",
+        "shippedDetails": "Your order has been shipped and is on its way",
+        "deliveredDetails": "Your order has been delivered successfully",
+        "cancelledDetails": "Your order has been cancelled"
+      }
+    }
+  }
+}

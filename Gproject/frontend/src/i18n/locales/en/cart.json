@@ -1,0 +1,11 @@
+{
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "emptyMessage": "Add some products to your cart and they will appear here",
+    "browseProducts": "Browse Products",
+    "total": "Total",
+    "continueShopping": "Continue Shopping",
+    "checkout": "Checkout"
+  }
+}

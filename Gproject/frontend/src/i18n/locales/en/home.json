@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title": "Capture Your Perfect Moments",
+    "subtitle": "Professional photography services for all your special occasions",
+    "cta": "Book a Session"
+  },
+  "features": {
+    "title": "Why Choose Us",
+    "quality": {
+      "title": "Premium Quality",
+      "description": "State-of-the-art equipment and professional editing for stunning results"
+    },
+    "time": {
+      "title": "Flexible Scheduling",
+      "description": "Convenient booking options to fit your busy schedule"
+    },
+    "experience": {
+      "title": "Expert Team",
+      "description": "Years of experience in capturing life's beautiful moments"
+    }
+  },
+  "gallery": {
+    "title": "Our Portfolio"
+  }
+}

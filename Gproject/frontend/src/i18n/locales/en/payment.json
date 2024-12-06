@@ -1,0 +1,22 @@
+{
+  "payment": {
+    "selectMethod": "Select Payment Method",
+    "creditCard": "Credit Card",
+    "creditCardDesc": "Pay with Visa or Mastercard",
+    "paypalDesc": "Pay with your PayPal account",
+    "orderSummary": "Order Summary",
+    "total": "Total",
+    "continue": "Continue",
+    "cardNumber": "Card Number",
+    "cardName": "Name on Card",
+    "expiry": "Expiry Date",
+    "paypalEmail": "PayPal Email",
+    "paypalPassword": "Password",
+    "pay": "Pay Now",
+    "payWithPaypal": "Pay with PayPal",
+    "success": "Payment Successful!",
+    "successMessage": "Your booking has been confirmed",
+    "backToHome": "Back to Home",
+    "viewBookings": "View Bookings"
+  }
+}

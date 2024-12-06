@@ -1,0 +1,17 @@
+{
+  "invoice": {
+    "title": "فاتورة",
+    "serviceDetails": "تفاصيل الخدمة",
+    "service": "الخدمة",
+    "package": "الباقة",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "location": "الموقع",
+    "packagePrice": "سعر الباقة",
+    "total": "المبلغ الإجمالي",
+    "notes": "ملاحظات",
+    "termsAndConditions": "جميع الحجوزات تخضع لشروط وأحكام الخدمة",
+    "download": "تحميل الفاتورة",
+    "view": "عرض الفاتورة"
+  }
+}

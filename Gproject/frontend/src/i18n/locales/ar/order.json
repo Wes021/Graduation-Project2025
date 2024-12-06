@@ -1,0 +1,48 @@
+{
+  "order": {
+    "title": "الطلب",
+    "details": "تفاصيل الطلب",
+    "track": "تتبع الطلب",
+    "items": "محتويات الطلب",
+    "total": "المجموع",
+    "quantity": "الكمية",
+    "status": {
+      "pending": "قيد الانتظار",
+      "confirmed": "مؤكد",
+      "shipped": "تم الشحن",
+      "delivered": "تم التوصيل",
+      "cancelled": "ملغي"
+    },
+    "tracking": {
+      "title": "تتبع الطلب",
+      "received": {
+        "title": "تم استلام الطلب",
+        "details": "تم استلام طلبك وسنبدأ في معالجته قريباً"
+      },
+      "shipping": {
+        "title": "قيد المعالجة",
+        "details": "يتم تجهيز طلبك للشحن"
+      },
+      "onway": {
+        "title": "في الطريق",
+        "details": "طلبك في طريقه إليك"
+      },
+      "delivered": {
+        "title": "تم التوصيل",
+        "details": "تم توصيل طلبك بنجاح"
+      }
+    },
+    "estimatedTime": "الوقت المتوقع للتوصيل",
+    "remainingDistance": "المسافة المتبقية",
+    "minutes": "دقيقة",
+    "km": "كم",
+    "notFound": "لم يتم العثور على الطلب",
+    "createdAt": "تاريخ الطلب",
+    "customerInfo": "معلومات العميل",
+    "actions": {
+      "confirm": "تأكيد الطلب",
+      "cancel": "إلغاء الطلب",
+      "viewDetails": "عرض التفاصيل"
+    }
+  }
+}

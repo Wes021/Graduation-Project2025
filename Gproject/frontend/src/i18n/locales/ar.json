@@ -1,0 +1,219 @@
+{
+  "brand": "استوديو التصوير",
+  "nav": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "profile": "الملف الشخصي",
+    "logout": "تسجيل الخروج"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "rememberMe": "تذكرني",
+    "noAccount": "ليس لديك حساب؟",
+    "hasAccount": "لديك حساب بالفعل؟"
+  },
+  "hero": {
+    "title": "التقط لحظاتك المثالية",
+    "subtitle": "خدمات تصوير احترافية لجميع مناسباتك الخاصة",
+    "cta": "احجز جلسة"
+  },
+  "features": {
+    "title": "لماذا تختارنا",
+    "quality": {
+      "title": "جودة ممتازة",
+      "description": "معدات حديثة وتحرير احترافي للصور للحصول على نتائج مذهلة"
+    },
+    "time": {
+      "title": "جدولة مرنة",
+      "description": "خيارات حجز مريحة تناسب جدولك المزدحم"
+    },
+    "experience": {
+      "title": "فريق خبير",
+      "description": "سنوات من الخبرة في التقاط لحظات الحياة الجميلة"
+    }
+  },
+  "gallery": {
+    "title": "معرض أعمالنا"
+  },
+  "services": {
+    "header": {
+      "title": "خدماتنا",
+      "subtitle": "اكتشف مجموعتنا الشاملة من خدمات التصوير المهنية"
+    },
+    "portrait": {
+      "title": "تصوير بورتريه",
+      "description": "براعة في التقاط جوهر وشخصية الأفراد أو المجموعات"
+    },
+    "landscape": {
+      "title": "تصوير المناظر الطبيعية",
+      "description": "خبرة في التقاط المناظر الخلابة والجمال الطبيعي"
+    },
+    "wildlife": {
+      "title": "تصوير الحياة البرية",
+      "description": "مهارة في التقاط الحيوانات في موائلها الطبيعية"
+    },
+    "macro": {
+      "title": "التصوير المقرب",
+      "description": "تخصص في التقاط صور مقربة للغاية"
+    },
+    "event": {
+      "title": "تصوير المناسبات",
+      "description": "توثيق احترافي للمناسبات"
+    },
+    "fashion": {
+      "title": "تصوير الأزياء",
+      "description": "تصوير احترافي للأزياء والموضة"
+    },
+    "product": {
+      "title": "تصوير المنتجات",
+      "description": "تصوير احترافي للمنتجات والتجارة الإلكترونية"
+    },
+    "food": {
+      "title": "تصوير الطعام",
+      "description": "تصوير احترافي للمأكولات والمشروبات"
+    },
+    "bookNow": "احجز الآن",
+    "aboutService": "عن هذه الخدمة",
+    "includedFeatures": "المميزات المتضمنة"
+  },
+  "booking": {
+    "title": "حجز جلسة",
+    "edit": "تعديل الحجز",
+    "serviceLabel": "اختر الخدمة",
+    "selectService": "اختر خدمة",
+    "cityLabel": "اختر المدينة",
+    "selectCity": "اختر مدينة",
+    "dateLabel": "اختر التاريخ",
+    "timeLabel": "اختر الوقت",
+    "selectTime": "اختر وقتاً",
+    "packageLabel": "اختر الباقة",
+    "submit": "تأكيد الحجز",
+    "status": {
+      "pending": "قيد الانتظار",
+      "confirmed": "مؤكد",
+      "completed": "مكتمل",
+      "cancelled": "ملغي"
+    },
+    "cancel": "إلغاء الحجز",
+    "delete": "حذف الحجز",
+    "noBookings": "لا توجد حجوزات",
+    "createdAt": "تم الإنشاء في"
+  },
+  "products": {
+    "title": "معدات التصوير",
+    "searchPlaceholder": "ابحث عن المنتجات...",
+    "addToCart": "أضف إلى السلة",
+    "notFound": "المنتج غير موجود",
+    "specifications": "المواصفات",
+    "quantity": "الكمية",
+    "reviews": "تقييمات",
+    "filters": {
+      "title": "التصفية",
+      "categories": "الفئات",
+      "priceRange": "نطاق السعر",
+      "minPrice": "السعر الأدنى",
+      "maxPrice": "السعر الأقصى"
+    },
+    "categories": {
+      "cameras": "كاميرات",
+      "lenses": "عدسات",
+      "lighting": "إضاءة",
+      "accessories": "إكسسوارات",
+      "backdrops": "خلفيات"
+    }
+  },
+  "cart": {
+    "title": "سلة التسوق",
+    "empty": "السلة فارغة",
+    "emptyMessage": "أضف بعض المنتجات إلى سلتك وستظهر هنا",
+    "browseProducts": "تصفح المنتجات",
+    "total": "المجموع",
+    "continueShopping": "متابعة التسوق",
+    "checkout": "إتمام الشراء"
+  },
+  "payment": {
+    "selectMethod": "اختر طريقة الدفع",
+    "creditCard": "بطاقة ائتمان",
+    "creditCardDesc": "ادفع باستخدام فيزا أو ماستركارد",
+    "paypalDesc": "ادفع باستخدام حساب باي بال",
+    "orderSummary": "ملخص الطلب",
+    "total": "المجموع",
+    "continue": "متابعة",
+    "cardNumber": "رقم البطاقة",
+    "cardName": "الاسم على البطاقة",
+    "expiry": "تاريخ الانتهاء",
+    "paypalEmail": "البريد الإلكتروني لباي بال",
+    "paypalPassword": "كلمة المرور",
+    "pay": "ادفع الآن",
+    "payWithPaypal": "الدفع عبر باي بال",
+    "success": "تم الدفع بنجاح!",
+    "successMessage": "تم تأكيد حجزك",
+    "backToHome": "العودة للرئيسية",
+    "viewBookings": "عرض الحجوزات"
+  },
+  "invoice": {
+    "title": "فاتورة",
+    "serviceDetails": "تفاصيل الخدمة",
+    "service": "الخدمة",
+    "package": "الباقة",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "location": "الموقع",
+    "packagePrice": "سعر الباقة",
+    "total": "المبلغ الإجمالي",
+    "notes": "ملاحظات",
+    "termsAndConditions": "جميع الحجوزات تخضع لشروط وأحكام الخدمة",
+    "download": "تحميل الفاتورة",
+    "view": "عرض الفاتورة"
+  },
+  "admin": {
+    "dashboard": "لوحة التحكم",
+    "products": "المنتجات",
+    "bookings": "الحجوزات",
+    "orders": "الطلبات",
+    "bookingId": "رقم الحجز",
+    "service": "الخدمة",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "city": "المدينة",
+    "status": "الحالة",
+    "actions": "الإجراءات",
+    "confirm": "تأكيد",
+    "reject": "رفض",
+    "filters": "التصفية",
+    "filterByCity": "تصفية حسب المدينة",
+    "filterByService": "تصفية حسب الخدمة",
+    "filterByStatus": "تصفية حسب الحالة",
+    "allCities": "جميع المدن",
+    "allServices": "جميع الخدمات",
+    "allStatuses": "جميع الحالات",
+    "noBookingsFound": "لم يتم العثور على حجوزات"
+  },
+  "common": {
+    "close": "إغلاق"
+  },
+  "cities": {
+    "amman": "عمّان",
+    "zarqa": "الزرقاء",
+    "irbid": "إربد",
+    "aqaba": "العقبة",
+    "madaba": "مادبا",
+    "salt": "السلط",
+    "jerash": "جرش",
+    "ajloun": "عجلون",
+    "mafraq": "المفرق",
+    "karak": "الكرك",
+    "tafilah": "الطفيلة",
+    "maan": "معان",
+    "ramtha": "الرمثا",
+    "sahab": "سحاب",
+    "russeifa": "الرصيفة",
+    "fuheis": "الفحيص",
+    "mahis": "ماحص",
+    "dead_sea": "البحر الميت",
+    "petra": "البتراء",
+    "wadi_rum": "وادي رم"
+  }
+}

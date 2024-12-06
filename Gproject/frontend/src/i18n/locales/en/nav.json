@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "profile": "Profile",
+    "logout": "Logout",
+    "admin": {
+      "dashboard": "Admin Dashboard"
+    }
+  }
+}

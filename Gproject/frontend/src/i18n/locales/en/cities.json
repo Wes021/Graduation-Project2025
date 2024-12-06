@@ -1,0 +1,24 @@
+{
+  "cities": {
+    "amman": "Amman",
+    "zarqa": "Zarqa",
+    "irbid": "Irbid",
+    "aqaba": "Aqaba",
+    "madaba": "Madaba",
+    "salt": "Salt",
+    "jerash": "Jerash",
+    "ajloun": "Ajloun",
+    "mafraq": "Mafraq",
+    "karak": "Karak",
+    "tafilah": "Tafilah",
+    "maan": "Ma'an",
+    "ramtha": "Ramtha",
+    "sahab": "Sahab",
+    "russeifa": "Russeifa",
+    "fuheis": "Fuheis",
+    "mahis": "Mahis",
+    "dead_sea": "Dead Sea",
+    "petra": "Petra",
+    "wadi_rum": "Wadi Rum"
+  }
+}

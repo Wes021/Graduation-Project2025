@@ -1,0 +1,321 @@
+{
+  "brand": "PhotoStudio",
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "forgotPassword": "Forgot Password?",
+    "rememberMe": "Remember Me",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "hero": {
+    "title": "Capture Your Perfect Moments",
+    "subtitle": "Professional photography services for all your special occasions",
+    "cta": "Book a Session"
+  },
+  "features": {
+    "title": "Why Choose Us",
+    "quality": {
+      "title": "Premium Quality",
+      "description": "State-of-the-art equipment and professional editing for stunning results"
+    },
+    "time": {
+      "title": "Flexible Scheduling",
+      "description": "Convenient booking options to fit your busy schedule"
+    },
+    "experience": {
+      "title": "Expert Team",
+      "description": "Years of experience in capturing life's beautiful moments"
+    }
+  },
+  "gallery": {
+    "title": "Our Portfolio"
+  },
+  "services": {
+    "header": {
+      "title": "Our Services",
+      "subtitle": "Discover our comprehensive range of professional photography services"
+    },
+    "portrait": {
+      "title": "Portrait Photography",
+      "description": "Mastery in capturing the essence and personality of individuals or groups"
+    },
+    "landscape": {
+      "title": "Landscape Photography",
+      "description": "Expertise in capturing scenic vistas and natural beauty"
+    },
+    "wildlife": {
+      "title": "Wildlife Photography",
+      "description": "Skill in capturing animals in their natural habitats"
+    },
+    "macro": {
+      "title": "Macro Photography",
+      "description": "Specialization in capturing extreme close-up images"
+    },
+    "event": {
+      "title": "Event Photography",
+      "description": "Professional documentation of events"
+    },
+    "fashion": {
+      "title": "Fashion Photography",
+      "description": "Professional fashion and style photography"
+    },
+    "product": {
+      "title": "Product Photography",
+      "description": "Professional product and e-commerce photography"
+    },
+    "food": {
+      "title": "Food Photography",
+      "description": "Professional food and beverage photography"
+    },
+    "bookNow": "Book Now",
+    "aboutService": "About This Service",
+    "includedFeatures": "Included Features"
+  },
+  "booking": {
+    "title": "Book a Session",
+    "edit": "Edit Booking",
+    "serviceLabel": "Select Service",
+    "selectService": "Choose a service",
+    "cityLabel": "Select City",
+    "selectCity": "Choose a city",
+    "dateLabel": "Select Date",
+    "timeLabel": "Select Time",
+    "selectTime": "Choose a time",
+    "packageLabel": "Select Package",
+    "submit": "Confirm Booking",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "cancel": "Cancel Booking",
+    "delete": "Delete Booking",
+    "noBookings": "No bookings found",
+    "createdAt": "Created at"
+  },
+  "products": {
+    "title": "Photography Equipment",
+    "searchPlaceholder": "Search products...",
+    "addToCart": "Add to Cart",
+    "notFound": "Product not found",
+    "specifications": "Specifications",
+    "quantity": "Quantity",
+    "reviews": "reviews",
+    "filters": {
+      "title": "Filters",
+      "categories": "Categories",
+      "priceRange": "Price Range",
+      "minPrice": "Min Price",
+      "maxPrice": "Max Price"
+    },
+    "categories": {
+      "cameras": "Cameras",
+      "lenses": "Lenses",
+      "lighting": "Lighting",
+      "accessories": "Accessories",
+      "backdrops": "Backdrops"
+    }
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "emptyMessage": "Add some products to your cart and they will appear here",
+    "browseProducts": "Browse Products",
+    "total": "Total",
+    "continueShopping": "Continue Shopping",
+    "checkout": "Checkout"
+  },
+  "payment": {
+    "selectMethod": "Select Payment Method",
+    "creditCard": "Credit Card",
+    "creditCardDesc": "Pay with Visa or Mastercard",
+    "paypalDesc": "Pay with your PayPal account",
+    "orderSummary": "Order Summary",
+    "total": "Total",
+    "continue": "Continue",
+    "cardNumber": "Card Number",
+    "cardName": "Name on Card",
+    "expiry": "Expiry Date",
+    "paypalEmail": "PayPal Email",
+    "paypalPassword": "Password",
+    "pay": "Pay Now",
+    "payWithPaypal": "Pay with PayPal",
+    "success": "Payment Successful!",
+    "successMessage": "Your booking has been confirmed",
+    "backToHome": "Back to Home",
+    "viewBookings": "View Bookings"
+  },
+  "invoice": {
+    "title": "Invoice",
+    "serviceDetails": "Service Details",
+    "service": "Service",
+    "package": "Package",
+    "date": "Date",
+    "time": "Time",
+    "location": "Location",
+    "packagePrice": "Package Price",
+    "total": "Total Amount",
+    "notes": "Notes",
+    "termsAndConditions": "All bookings are subject to our terms and conditions",
+    "download": "Download Invoice",
+    "view": "View Invoice"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "products": "Products",
+    "bookings": "Bookings",
+    "orders": "Orders",
+    "bookingId": "Booking ID",
+    "service": "Service",
+    "date": "Date",
+    "time": "Time",
+    "city": "City",
+    "status": "Status",
+    "actions": "Actions",
+    "confirm": "Confirm",
+    "reject": "Reject",
+    "filters": "Filters",
+    "filterByCity": "Filter by City",
+    "filterByService": "Filter by Service",
+    "filterByStatus": "Filter by Status",
+    "allCities": "All Cities",
+    "allServices": "All Services",
+    "allStatuses": "All Statuses",
+    "noBookingsFound": "No bookings found"
+  },
+  "common": {
+    "close": "Close"
+  },
+  "cities": {
+    "amman": "Amman",
+    "zarqa": "Zarqa",
+    "irbid": "Irbid",
+    "aqaba": "Aqaba",
+    "madaba": "Madaba",
+    "salt": "Salt",
+    "jerash": "Jerash",
+    "ajloun": "Ajloun",
+    "mafraq": "Mafraq",
+    "karak": "Karak",
+    "tafilah": "Tafilah",
+    "maan": "Ma'an",
+    "ramtha": "Ramtha",
+    "sahab": "Sahab",
+    "russeifa": "Russeifa",
+    "fuheis": "Fuheis",
+    "mahis": "Mahis",
+    "dead_sea": "Dead Sea",
+    "petra": "Petra",
+    "wadi_rum": "Wadi Rum"
+  },
+
+
+
+    "products": {
+        "title": "معدات التصوير",
+            "searchPlaceholder" : "ابحث عن المنتجات...",
+            "addToCart" : "أضف إلى السلة",
+            "notFound" : "المنتج غير موجود",
+            "specifications" : "المواصفات",
+            "quantity" : "الكمية",
+            "reviews" : "تقييمات",
+            "filters" : {
+            "title": "التصفية",
+                "categories" : "الفئات",
+                "priceRange" : "نطاق السعر",
+                "minPrice" : "السعر الأدنى",
+                "maxPrice" : "السعر الأقصى"
+        },
+            "categories": {
+            "cameras": "كاميرات",
+                "lenses" : "عدسات",
+                "lighting" : "إضاءة",
+                "accessories" : "إكسسوارات",
+                "backdrops" : "خلفيات"
+        },
+            "sort": {
+            "title": "ترتيب حسب",
+                "newest" : "الأحدث",
+                "priceAsc" : "السعر: من الأقل إلى الأعلى",
+                "priceDesc" : "السعر: من الأعلى إلى الأقل",
+                "popular" : "الأكثر شعبية"
+        }
+    },
+        "admin": {
+        "dashboard": {
+            "title": "لوحة التحكم",
+                "overview" : "نظرة عامة",
+                "totalSales" : "إجمالي المبيعات",
+                "totalOrders" : "إجمالي الطلبات",
+                "totalBookings" : "إجمالي الحجوزات",
+                "recentActivity" : "النشاط الأخير"
+        },
+            "products": {
+            "title": "إدارة المنتجات",
+                "addProduct" : "إضافة منتج",
+                "editProduct" : "تعديل المنتج",
+                "deleteProduct" : "حذف المنتج",
+                "productDetails" : "تفاصيل المنتج",
+                "productName" : "اسم المنتج",
+                "description" : "الوصف",
+                "category" : "الفئة",
+                "price" : "السعر",
+                "stock" : "المخزون",
+                "image" : "صورة المنتج",
+                "imageUrl" : "رابط الصورة",
+                "save" : "حفظ التغييرات",
+                "cancel" : "إلغاء",
+                "confirmDelete" : "هل أنت متأكد من حذف هذا المنتج؟",
+                "productAdded" : "تمت إضافة المنتج بنجاح",
+                "productUpdated" : "تم تحديث المنتج بنجاح",
+                "productDeleted" : "تم حذف المنتج بنجاح"
+        },
+            "bookings": {
+            "title": "إدارة الحجوزات",
+                "newBookings" : "الحجوزات الجديدة",
+                "confirmedBookings" : "الحجوزات المؤكدة",
+                "completedBookings" : "الحجوزات المكتملة",
+                "cancelledBookings" : "الحجوزات الملغاة",
+                "viewDetails" : "عرض التفاصيل",
+                "filters" : {
+                "title": "تصفية الحجوزات",
+                    "date" : "التاريخ",
+                    "status" : "الحالة",
+                    "service" : "الخدمة",
+                    "location" : "الموقع"
+            }
+        },
+            "orders": {
+            "title": "إدارة الطلبات",
+                "orderDetails" : "تفاصيل الطلب",
+                "customerInfo" : "معلومات العميل",
+                "orderStatus" : "حالة الطلب",
+                "paymentStatus" : "حالة الدفع",
+                "shippingInfo" : "معلومات الشحن",
+                "updateStatus" : "تحديث الحالة"
+        },
+            "analytics": {
+            "title": "التحليلات",
+                "salesOverview" : "نظرة عامة على المبيعات",
+                "topProducts" : "أفضل المنتجات",
+                "bookingStats" : "إحصائيات الحجوزات",
+                "revenueChart" : "مخطط الإيرادات"
+        }
+    }
+
+
+
+
+
+
+
+  
+}

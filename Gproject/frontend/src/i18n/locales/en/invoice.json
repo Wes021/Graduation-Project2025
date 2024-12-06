@@ -1,0 +1,17 @@
+{
+  "invoice": {
+    "title": "Invoice",
+    "serviceDetails": "Service Details",
+    "service": "Service",
+    "package": "Package",
+    "date": "Date",
+    "time": "Time",
+    "location": "Location",
+    "packagePrice": "Package Price",
+    "total": "Total Amount",
+    "notes": "Notes",
+    "termsAndConditions": "All bookings are subject to our terms and conditions",
+    "download": "Download Invoice",
+    "view": "View Invoice"
+  }
+}

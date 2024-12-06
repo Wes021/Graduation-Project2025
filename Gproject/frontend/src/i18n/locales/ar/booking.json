@@ -1,0 +1,25 @@
+{
+  "booking": {
+    "title": "حجز جلسة",
+    "edit": "تعديل الحجز",
+    "serviceLabel": "اختر الخدمة",
+    "selectService": "اختر خدمة",
+    "cityLabel": "اختر المدينة",
+    "selectCity": "اختر مدينة",
+    "dateLabel": "اختر التاريخ",
+    "timeLabel": "اختر الوقت",
+    "selectTime": "اختر وقتاً",
+    "packageLabel": "اختر الباقة",
+    "submit": "تأكيد الحجز",
+    "status": {
+      "pending": "قيد الانتظار",
+      "confirmed": "مؤكد",
+      "completed": "مكتمل",
+      "cancelled": "ملغي"
+    },
+    "cancel": "إلغاء الحجز",
+    "delete": "حذف الحجز",
+    "noBookings": "لا توجد حجوزات",
+    "createdAt": "تم الإنشاء في"
+  }
+}

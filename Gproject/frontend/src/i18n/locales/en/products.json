@@ -1,0 +1,32 @@
+{
+  "products": {
+    "title": "Photography Equipment",
+    "searchPlaceholder": "Search products...",
+    "addToCart": "Add to Cart",
+    "notFound": "Product not found",
+    "specifications": "Specifications",
+    "quantity": "Quantity",
+    "reviews": "reviews",
+    "filters": {
+      "title": "Filters",
+      "categories": "Categories",
+      "priceRange": "Price Range",
+      "minPrice": "Min Price",
+      "maxPrice": "Max Price"
+    },
+    "categories": {
+      "cameras": "Cameras",
+      "lenses": "Lenses",
+      "lighting": "Lighting",
+      "accessories": "Accessories",
+      "backdrops": "Backdrops"
+    },
+    "sort": {
+      "title": "Sort by",
+      "newest": "Newest",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "popular": "Most Popular"
+    }
+  }
+}

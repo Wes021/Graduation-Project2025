@@ -1,0 +1,31 @@
+{
+  "footer": {
+    "description": "خدمات تصوير احترافية لجميع مناسباتك الخاصة",
+    "contact": {
+      "title": "اتصل بنا",
+      "email": "contact@photostudio.com",
+      "phone": "+962 79 123 4567",
+      "address": "شارع الاستقلال، عمان، الأردن"
+    },
+    "links": {
+      "title": "روابط سريعة",
+      "about": "من نحن",
+      "services": "خدماتنا",
+      "portfolio": "معرض الأعمال",
+      "contact": "اتصل بنا"
+    },
+    "newsletter": {
+      "title": "النشرة البريدية",
+      "description": "اشترك للحصول على آخر الأخبار والعروض",
+      "placeholder": "البريد الإلكتروني",
+      "button": "اشترك"
+    },
+    "social": {
+      "title": "تابعنا",
+      "facebook": "فيسبوك",
+      "instagram": "انستغرام",
+      "twitter": "تويتر"
+    },
+    "copyright": "جميع الحقوق محفوظة"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "notifications": {
+    "title": "الإشعارات",
+    "bookingCancelled": "تم الغاء الحجز بنجاح",
+    "bookingSuccess": "تم الحجز بنجاح",
+    "bookingPaymentCompleted": "تم الدفع بنجاح",
+    "bookingConfirmed": "تم تأكيد الحجز بنجاح",
+
+    "empty": "لا توجد إشعارات",
+    "markAllRead": "تحديد الكل كمقروء",
+    "remove": "إزالة",
+    "orderReceived": "تم استلام الطلب",
+    "orderReceivedDetails": "تم استلام طلبك وسنبدأ في تجهيزه قريباً",
+    "orderShipping": "جاري تجهيز الطلب",
+    "orderShippingDetails": "نقوم حالياً بتجهيز طلبك للشحن",
+    "orderOnWay": "الطلب في الطريق إليك",
+    "orderOnWayDetails": "طلبك في طريقه إليك الآن",
+    "orderDelivered": "تم توصيل الطلب",
+    "orderDeliveredDetails": "تم توصيل طلبك بنجاح",
+    "orderSuccess": "تم تأكيد الطلب بنجاح",
+    "orderConfirmation": "شكراً لك! سنبدأ في تجهيز طلبك فوراً",
+    "paymentCompleted": "تم إتمام عملية الدفع بنجاح",
+    "paymentDetails": "تم معالجة الدفع بنجاح وتأكيد طلبك",
+    "purchaseSuccess": "تمت عملية الشراء بنجاح",
+    "purchaseDetails": "تم تأكيد عملية الشراء وسيتم معالجة طلبك",
+    "order": {
+      "confirmed": "تم تأكيد الطلب",
+      "shipped": "تم شحن الطلب",
+      "delivered": "تم التوصيل",
+      "cancelled": "تم الإلغاء",
+      "status": {
+        "confirmedDetails": "تم تأكيد طلبك وبدأنا في تجهيزه",
+        "shippedDetails": "تم شحن طلبك وهو في طريقه إليك",
+        "deliveredDetails": "تم توصيل طلبك بنجاح",
+        "cancelledDetails": "تم إلغاء طلبك"
+      }
+    }
+  }
+}

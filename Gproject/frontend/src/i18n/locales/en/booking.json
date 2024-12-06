@@ -1,0 +1,25 @@
+{
+  "booking": {
+    "title": "Book a Session",
+    "edit": "Edit Booking",
+    "serviceLabel": "Select Service",
+    "selectService": "Choose a service",
+    "cityLabel": "Select City",
+    "selectCity": "Choose a city",
+    "dateLabel": "Select Date",
+    "timeLabel": "Select Time",
+    "selectTime": "Choose a time",
+    "packageLabel": "Select Package",
+    "submit": "Confirm Booking",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "cancel": "Cancel Booking",
+    "delete": "Delete Booking",
+    "noBookings": "No bookings found",
+    "createdAt": "Created at"
+  }
+}

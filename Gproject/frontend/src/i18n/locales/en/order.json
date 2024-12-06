@@ -1,0 +1,48 @@
+{
+  "order": {
+    "title": "Order",
+    "details": "Order Details",
+    "track": "Track Order",
+    "items": "Order Items",
+    "total": "Total",
+    "quantity": "Quantity",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    },
+    "tracking": {
+      "title": "Order Tracking",
+      "received": {
+        "title": "Order Received",
+        "details": "We've received your order and will begin processing it soon"
+      },
+      "shipping": {
+        "title": "Processing",
+        "details": "Your order is being prepared for shipping"
+      },
+      "onway": {
+        "title": "On the Way",
+        "details": "Your order is out for delivery"
+      },
+      "delivered": {
+        "title": "Delivered",
+        "details": "Your order has been delivered successfully"
+      }
+    },
+    "estimatedTime": "Estimated Delivery Time",
+    "remainingDistance": "Remaining Distance",
+    "minutes": "minutes",
+    "km": "km",
+    "notFound": "Order not found",
+    "createdAt": "Order Date",
+    "customerInfo": "Customer Information",
+    "actions": {
+      "confirm": "Confirm Order",
+      "cancel": "Cancel Order",
+      "viewDetails": "View Details"
+    }
+  }
+}

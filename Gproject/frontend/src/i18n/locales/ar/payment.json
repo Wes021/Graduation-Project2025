@@ -1,0 +1,22 @@
+{
+  "payment": {
+    "selectMethod": "اختر طريقة الدفع",
+    "creditCard": "بطاقة ائتمان",
+    "creditCardDesc": "ادفع باستخدام فيزا أو ماستركارد",
+    "paypalDesc": "ادفع باستخدام حساب باي بال",
+    "orderSummary": "ملخص الطلب",
+    "total": "المجموع",
+    "continue": "متابعة",
+    "cardNumber": "رقم البطاقة",
+    "cardName": "الاسم على البطاقة",
+    "expiry": "تاريخ الانتهاء",
+    "paypalEmail": "البريد الإلكتروني لباي بال",
+    "paypalPassword": "كلمة المرور",
+    "pay": "ادفع الآن",
+    "payWithPaypal": "الدفع عبر باي بال",
+    "success": "تم الدفع بنجاح!",
+    "successMessage": "تم تأكيد حجزك",
+    "backToHome": "العودة للرئيسية",
+    "viewBookings": "عرض الحجوزات"
+  }
+}

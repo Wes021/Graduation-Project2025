@@ -1,0 +1,31 @@
+{
+  "footer": {
+    "description": "Professional photography services for all your special occasions",
+    "contact": {
+      "title": "Contact Us",
+      "email": "contact@photostudio.com",
+      "phone": "+962 79 123 4567",
+      "address": "Independence Street, Amman, Jordan"
+    },
+    "links": {
+      "title": "Quick Links",
+      "about": "About Us",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Subscribe to receive latest news and offers",
+      "placeholder": "Email address",
+      "button": "Subscribe"
+    },
+    "social": {
+      "title": "Follow Us",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter"
+    },
+    "copyright": "All rights reserved"
+  }
+}

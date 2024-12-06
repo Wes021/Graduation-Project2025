@@ -1,0 +1,43 @@
+{
+  "services": {
+    "header": {
+      "title": "Our Services",
+      "subtitle": "Discover our comprehensive range of professional photography services"
+    },
+    "portrait": {
+      "title": "Portrait Photography",
+      "description": "Mastery in capturing the essence and personality of individuals or groups"
+    },
+    "landscape": {
+      "title": "Landscape Photography",
+      "description": "Expertise in capturing scenic vistas and natural beauty"
+    },
+    "wildlife": {
+      "title": "Wildlife Photography",
+      "description": "Skill in capturing animals in their natural habitats"
+    },
+    "macro": {
+      "title": "Macro Photography",
+      "description": "Specialization in capturing extreme close-up images"
+    },
+    "event": {
+      "title": "Event Photography",
+      "description": "Professional documentation of events"
+    },
+    "fashion": {
+      "title": "Fashion Photography",
+      "description": "Professional fashion and style photography"
+    },
+    "product": {
+      "title": "Product Photography",
+      "description": "Professional product and e-commerce photography"
+    },
+    "food": {
+      "title": "Food Photography",
+      "description": "Professional food and beverage photography"
+    },
+    "bookNow": "Book Now",
+    "aboutService": "About This Service",
+    "includedFeatures": "Included Features"
+  }
+}

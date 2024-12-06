@@ -1,0 +1,32 @@
+{
+  "products": {
+    "title": "معدات التصوير",
+    "searchPlaceholder": "ابحث عن المنتجات...",
+    "addToCart": "أضف إلى السلة",
+    "notFound": "المنتج غير موجود",
+    "specifications": "المواصفات",
+    "quantity": "الكمية",
+    "reviews": "تقييمات",
+    "filters": {
+      "title": "التصفية",
+      "categories": "الفئات",
+      "priceRange": "نطاق السعر",
+      "minPrice": "السعر الأدنى",
+      "maxPrice": "السعر الأقصى"
+    },
+    "categories": {
+      "cameras": "كاميرات",
+      "lenses": "عدسات",
+      "lighting": "إضاءة",
+      "accessories": "إكسسوارات",
+      "backdrops": "خلفيات"
+    },
+    "sort": {
+      "title": "ترتيب حسب",
+      "newest": "الأحدث",
+      "priceAsc": "السعر: من الأقل إلى الأعلى",
+      "priceDesc": "السعر: من الأعلى إلى الأقل",
+      "popular": "الأكثر شعبية"
+    }
+  }
+}

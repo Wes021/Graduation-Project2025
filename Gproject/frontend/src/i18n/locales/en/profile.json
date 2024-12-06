@@ -1,0 +1,28 @@
+{
+  "profile": {
+    "title": "Profile",
+    "bookings": "Bookings",
+    "orders": "Orders",
+    "personalInfo": {
+      "title": "Personal Information",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "address": "Address",
+      "bio": "Bio"
+    },
+    "actions": {
+      "edit": "Edit Profile",
+      "save": "Save Changes",
+      "cancel": "Cancel",
+      "changePhoto": "Click to change photo"
+    },
+    "tabs": {
+      "profile": "Profile",
+      "bookings": "Bookings",
+      "orders": "Orders"
+    },
+    "noBookings": "No bookings found",
+    "noOrders": "No orders found"
+  }
+}
