@@ -124,9 +124,6 @@ return [
     ],
 
 
-    'providers' => [
-    // Other providers...
-    Fruitcake\Cors\CorsServiceProvider::class,
-],
+    
 
 ];
