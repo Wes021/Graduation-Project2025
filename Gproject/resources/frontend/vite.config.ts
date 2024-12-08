@@ -6,12 +6,11 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'resources/frontend'),
+      '@': path.resolve(__dirname, 'resources/frontend'), // Allows you to use "@/..." in imports
     },
   },
-  build: {
-    rollupOptions: {
-      input: path.resolve(__dirname, 'resources/frontend/index.html'), // Point to the correct index.html
-    },
+  server: {
+    host: '127.0.0.1',
+    port: 5173,
   },
 });

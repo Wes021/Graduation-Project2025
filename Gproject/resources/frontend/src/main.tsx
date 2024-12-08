@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import './i18n';
 import './index.css';
+// import '/resources/frontend/src/i18n';
+// import '/resources/frontend/src/index.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
