@@ -29,9 +29,10 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/your-endpoint')
-        .then(response => setData(response.data))
-        .catch(error => console.log(error));
+    axios.get('http://127.0.0.1:8000/api/your-endpoint')
+    .then(response => setData(response.data))
+    .catch(error => console.log(error));
+
 }, []);
 
   return (
