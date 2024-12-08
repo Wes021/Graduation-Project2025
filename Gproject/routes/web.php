@@ -53,9 +53,9 @@ Route::put('/changestatus/{appointment_id}',[AdminController::class,'changeStatu
 /////////AdminController/////////
 
 /////////Home Page/////////
-Route::get('/',function(){
-    return view('Home');
-})->name('/');
+// Route::get('/',function(){
+//     return view('Home');
+// })->name('/');
 /////////Home Page/////////
 
 
@@ -91,6 +91,20 @@ Route::post(('/deleteproducts'),[ProductManagment::class,'deleteProduct'])->name
 Route::get(('/displayProducts'),[ProductManagment::class,'displayProducts'])->name('displayProducts');
 
 /////////ManagerController/////////
+
+// Route::get('/{any}', function () {
+//     return view('react.index'); // assuming 'index' is your React entry point
+// })->where('any', '.*');
+
+// Route::get('/{any}', function () {
+//     return file_get_contents(public_path('dist/index.html'));
+// })->where('any', '.*');
+
+// Route::get('{any}', function () { return view('index'); })->where('any', '.*');
+
+Route::get('/', function () {
+    return view('react');
+});
 
 
 
