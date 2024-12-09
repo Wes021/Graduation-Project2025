@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './resources/views/**/*.blade.php', // All Blade files, including subdirectories
+    './resources/frontend/src/**/*.{js,jsx,ts,tsx}', // React components
+  ],
   darkMode: 'class',
   theme: {
     extend: {

@@ -9,6 +9,7 @@
         "fruitcake/laravel-cors": "*",
         "illuminate/http": "*",
         "laravel/framework": "^11.9",
+        "laravel/lumen-framework": "*",
         "laravel/tinker": "^2.9"
     },
 
