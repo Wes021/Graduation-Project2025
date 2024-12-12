@@ -1,20 +1,11 @@
 export type ProductCategory = 'cameras' | 'lenses' | 'lighting' | 'accessories' | 'backdrops';
 
+// types.ts
 export interface Product {
-  id: string;
-  name: string;
-  nameAr: string;
-  description: string;
-  descriptionAr: string;
+  product_id:number;
+  product_name: string;
   price: number;
-  originalPrice?: number;
-  category: ProductCategory;
-  image: string;
-  specs?: Record<string, string>;
-  specsAr?: Record<string, string>;
-  stock: number;
-  rating: number;
-  reviews: number;
-  hasDiscount?: boolean;
-  discountPercentage?: number;
+  description: string;
+  category_name: string;
+  produt_status_name: string;
 }

@@ -21,7 +21,7 @@ function ProductsList() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
       {filteredProducts.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.product_id} product={product} />
       ))}
     </div>
   );
@@ -36,15 +36,15 @@ function ProductCard({ product }: { product: Product }) {
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent navigation to product details
     if (!isAuthenticated) {
-      navigate('/login', { state: { from: `/products/${product.id}` } });
+      navigate('/login', { state: { from: `/products/${product.product_id}` } });
       return;
     }
 
     addToCart({
-      id: product.id,
-      name: i18n.language === 'ar' ? product.nameAr : product.name,
+      id: product.product_id,
+      name: i18n.language === 'ar' ? product.product_name : product.product_name,
       price: product.price,
-      image: product.image,
+      //image: product.image,
     });
     
     navigate('/cart');
@@ -52,25 +52,25 @@ function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <Link to={`/products/${product.id}`}>
+      <Link to={`/products/${product.product_id}`}>
         <div className="relative pb-[75%]">
           <img
-            src={product.image}
-            alt={i18n.language === 'ar' ? product.nameAr : product.name}
+            //src={product.image}
+            alt={i18n.language === 'ar' ? product.product_name : product.product_name}
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
       </Link>
 
       <div className="p-4">
-        <Link to={`/products/${product.id}`}>
+        <Link to={`/products/${product.product_id}`}>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            {i18n.language === 'ar' ? product.nameAr : product.name}
+            {i18n.language === 'ar' ? product.product_name : product.product_name}
           </h3>
         </Link>
 
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
-          {i18n.language === 'ar' ? product.descriptionAr : product.description}
+          {i18n.language === 'ar' ? product.description : product.description}
         </p>
 
         <div className="flex items-center justify-between">
@@ -78,9 +78,9 @@ function ProductCard({ product }: { product: Product }) {
             <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
               ${product.price}
             </span>
-            {product.originalPrice && (
+            {product.price && (
               <span className="text-sm text-gray-500 line-through">
-                ${product.originalPrice}
+                ${product.price}
               </span>
             )}
           </div>

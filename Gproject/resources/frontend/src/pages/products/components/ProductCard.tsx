@@ -19,32 +19,32 @@ export default function ProductCard({ product }: ProductCardProps) {
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     if (!isAuthenticated) {
-      navigate('/login', { state: { from: `/products/${product.id}` } });
+      navigate('/login', { state: { from: `/products/${product.product_id}` } });
       return;
     }
 
     addToCart({
-      id: product.id,
-      name: i18n.language === 'ar' ? product.nameAr : product.name,
+      id: product.product_id,
+      name: i18n.language === 'ar' ? product.product_name : product.product_name,
       price: product.price,
-      image: product.image,
+     // image: product.image,
     });
-    
+
     navigate('/cart');
   };
 
   return (
     <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-      <Link to={`/products/${product.id}`}>
+      <Link to={`/products/${product.product_id}`}>
         <div className="relative aspect-[4/3] overflow-hidden">
           <img
-            src={product.image}
-            alt={i18n.language === 'ar' ? product.nameAr : product.name}
+            //src={product.image}
+            alt={i18n.language === 'ar' ? product.product_name : product.product_name}
             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
           />
-          {product.originalPrice && (
+          {product.price && (
             <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-              {Math.round((1 - product.price / product.originalPrice) * 100)}% OFF
+              {Math.round((1 - product.price / product.price) * 100)}% OFF
             </div>
           )}
         </div>
@@ -52,18 +52,18 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="p-6">
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              {i18n.language === 'ar' ? product.nameAr : product.name}
+              {i18n.language === 'ar' ? product.product_name : product.product_name}
             </h3>
             <div className="flex items-center gap-1">
               <Star className="w-4 h-4 text-yellow-400 fill-current" />
               <span className="text-sm text-gray-600 dark:text-gray-400">
-                {product.rating}
+                {''}
               </span>
             </div>
           </div>
 
           <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-            {i18n.language === 'ar' ? product.descriptionAr : product.description}
+            {i18n.language === 'ar' ? product.description : product.description}
           </p>
 
           <div className="flex items-center justify-between">
@@ -71,9 +71,9 @@ export default function ProductCard({ product }: ProductCardProps) {
               <span className="text-xl font-bold text-gray-900 dark:text-white">
                 ${product.price}
               </span>
-              {product.originalPrice && (
+              {product.price && (
                 <span className="text-sm text-gray-500 line-through">
-                  ${product.originalPrice}
+                  ${product.price}
                 </span>
               )}
             </div>

@@ -19,7 +19,7 @@ function ProductsList() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
       {filteredProducts.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.product_id} product={product} />
       ))}
     </div>
   );
@@ -30,20 +30,20 @@ function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <Link to={`/products/${product.id}`}>
+      <Link to={`/products/${product.product_id}`}>
         <div className="relative pb-[75%]">
           <img
-            src={product.image}
-            alt={product.name}
+            //src={product.image}
+            alt={product.product_name}
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
       </Link>
 
       <div className="p-4">
-        <Link to={`/products/${product.id}`}>
+        <Link to={`/products/${product.product_id}`}>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            {product.name}
+            {product.product_name}
           </h3>
         </Link>
 
@@ -56,9 +56,9 @@ function ProductCard({ product }: { product: Product }) {
             <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
               ${product.price}
             </span>
-            {product.originalPrice && (
+            {product.price && (
               <span className="text-sm text-gray-500 line-through">
-                ${product.originalPrice}
+                ${product.price}
               </span>
             )}
           </div>

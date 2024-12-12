@@ -8,6 +8,9 @@ import ProductGrid from './components/ProductGrid';
 export default function Products() {
   const { t } = useTranslation();
 
+  // Fetch products from global variable
+  const products = window.__PRODUCTS__ || [];
+
   return (
     <div className="min-h-screen pt-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-8">
@@ -31,7 +34,7 @@ export default function Products() {
 
           {/* Product Grid */}
           <div className="lg:w-3/4">
-            <ProductGrid />
+            <ProductGrid products={products} />
           </div>
         </div>
       </div>
