@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Minus, Plus, Trash2 } from 'lucide-react';
 import { useCartStore } from '../store/cartStore';
 import { useAuthStore } from '../store/authStore';
+import axios from 'axios';
 
 function Cart() {
   const navigate = useNavigate();
@@ -11,9 +12,21 @@ function Cart() {
   const { user } = useAuthStore();
   const { items, removeItem, updateQuantity, getTotal, clearCart } = useCartStore();
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     if (!user?.name) return;
-    navigate('/payment');
+
+    try {
+      const response = await axios.post('/api/checkout', { items });
+      if (response.status === 200) {
+        navigate('/payment'); // Proceed to payment page
+      } else {
+        console.error(response.data.message);
+        alert(t('cart.checkoutError'));
+      }
+    } catch (error) {
+      console.error('Error during checkout:', error);
+      alert(t('cart.errorOccurred'));
+    }
   };
 
   if (items.length === 0) {

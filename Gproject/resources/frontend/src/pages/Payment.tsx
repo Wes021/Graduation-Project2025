@@ -4,25 +4,40 @@ import { useTranslation } from 'react-i18next';
 import { CreditCard } from 'lucide-react';
 import { PaypalIcon } from '../components/icons/PaypalIcon';
 import { useCartStore } from '../store/cartStore';
+import axios from 'axios';
 
 function Payment() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const [selectedMethod, setSelectedMethod] = useState<'visa' | 'paypal' | null>(null);
-  const { getTotal } = useCartStore();
+  const { getTotal, clearCart } = useCartStore();
+  const [loading, setLoading] = useState(false);
 
   // Get payment amount from location state (for bookings) or cart total (for products)
   const paymentData = location.state;
   const amount = paymentData?.amount || getTotal();
 
-  const handleMethodSelect = (method: 'visa' | 'paypal') => {
-    setSelectedMethod(method);
-  };
+  const handleContinue = async () => {
+    if (!selectedMethod) return;
 
-  const handleContinue = () => {
-    if (selectedMethod) {
-      navigate(`/payment/${selectedMethod}`, { state: paymentData });
+    setLoading(true);
+    try {
+      const response = await axios.post('/api/payment/process', {
+        method: selectedMethod,
+        amount,
+      });
+
+      if (response.status === 200) {
+        alert(response.data.message);
+        clearCart();
+        navigate('/confirmation', { state: { amount, method: selectedMethod } });
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+      alert(t('payment.errorOccurred'));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -36,8 +51,8 @@ function Payment() {
 
           <div className="space-y-4">
             {/* Payment Methods */}
-            <div 
-              onClick={() => handleMethodSelect('visa')}
+            <div
+              onClick={() => setSelectedMethod('visa')}
               className={`flex items-center p-6 border rounded-lg cursor-pointer transition-colors ${
                 selectedMethod === 'visa'
                   ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
@@ -55,8 +70,8 @@ function Payment() {
               </div>
             </div>
 
-            <div 
-              onClick={() => handleMethodSelect('paypal')}
+            <div
+              onClick={() => setSelectedMethod('paypal')}
               className={`flex items-center p-6 border rounded-lg cursor-pointer transition-colors ${
                 selectedMethod === 'paypal'
                   ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
@@ -93,10 +108,10 @@ function Payment() {
           {/* Continue Button */}
           <button
             onClick={handleContinue}
-            disabled={!selectedMethod}
+            disabled={!selectedMethod || loading}
             className="w-full mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors"
           >
-            {t('payment.continue')}
+            {loading ? t('payment.processing') : t('payment.continue')}
           </button>
         </div>
       </div>

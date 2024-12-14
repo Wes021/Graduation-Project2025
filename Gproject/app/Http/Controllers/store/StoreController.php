@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -63,4 +64,78 @@ public function addToCart(Request $request)
     }
 
 }
+
+
+    public function checkout(Request $request)
+{
+    
+    $cartItems = $request->input('items');
+
+    
+    if (!$cartItems || !is_array($cartItems)) {
+        return response()->json(['message' => 'Cart is empty or invalid.'], 400);
+    }
+
+    // Store cart items in session or process as needed
+    session(['cart_items' => $cartItems]);
+
+    
+    }
+
+
+
+
+
+
+public function handlePayment(Request $request)
+{
+    $data = $request->validate([
+        'method' => 'required|string|in:visa,paypal',
+        'amount' => 'required|numeric|min:0.01',
+        'product_id' => 'required|integer|exists:products,id', // Ensure the product exists
+    ]);
+
+    // Retrieve the authenticated user
+    $userData = (array) session('Cuser');
+    $userID=$userData['user_id'];
+
+    
+
+    try {
+        // Determine payment ID (you can adjust this logic based on your requirements)
+        $paymentId = $data['method'] === 'visa' ? 1 : 2;
+
+        // Insert into the orders table
+        $order = Order::create([
+            'user_id' => $userID,
+            'product_id' => $data['product_id'],
+            'payment_id' => $paymentId,
+        ]);
+
+        return response()->json([
+            'message' => 'Payment processed successfully.',
+            'order' => $order,
+        ]);
+    } catch (\Exception $e) {
+        return response()->json(['error' => 'Failed to process payment.'], 500);
+    }
+}
+
+    public function displayOrder(Request $request){
+        $orders=DB::table('order')
+        ->leftJoin('product','order.product_id','=', 'product.product_id' )
+        ->leftJoin('payment','order.payment_id', '=', 'payment.payment_id')
+        ->leftJoin('status', 'order.status_id', '=', 'status.status_id')
+        ->leftJoin('user', 'order.user_id', '=', 'user.user_id')
+        ->select(
+            'product.product_name as product_name',
+            'status.status_name as status_name',
+            'payment.payment_id as payment_id',
+            )->get();
+    }
+
+
+
+
+
 }
