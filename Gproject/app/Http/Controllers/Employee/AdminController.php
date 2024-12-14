@@ -132,6 +132,25 @@ class AdminController extends Controller
         
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+public function updateOrderStatus(Request $request)
+{
+    $validated = $request->validate([
+        'order_id' => 'required|integer|exists:orders,order_id', // Ensure order exists
+        'status_id' => 'required|integer|exists:status,status_id', // Ensure status exists
+    ]);
+
+    try {
+        
+        DB::table('order')
+            ->where('order_id', $validated['order_id'])
+            ->update(['status_id' => $validated['status_id']]);
+
+        
+    } catch (\Exception $e) {
+        redirect()->back()->with('error','Error in changing status');
+    }
+}
+
         
     }
     
