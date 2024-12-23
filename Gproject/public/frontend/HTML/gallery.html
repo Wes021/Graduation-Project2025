@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../nxm_logo.jpg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../styles/navbar-footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>demos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border: 5px solid #fff;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: darkslategrey;
+        }
+        
+    </style>
+</head>
+
+<body>
+ 
+    <header>
+        
+        <div class="nav">
+            <div class="logo">
+                <img src="../nxm_logo.jpg" alt="">
+            </div>
+            <div class="nav_links">
+                <a href="../index.html">Home</a>
+                <a href="../HTML/gallery.html">Gallery</a>
+                <a href="../HTML/individualpage.html"> Book A Session </a>
+            </div>
+        </div>
+    <h1>Photography Demos</h1>
+    <p>Explore our stunning black and white photography.</p>
+</header>
+
+
+<div class="gallery" id="gallery">
+    <img src="https://via.placeholder.com/300x200/000000/FFFFFF?text=Demo+1" alt="Demo 1">
+    <img src="https://via.placeholder.com/300x200/000000/FFFFFF?text=Demo+2" alt="Demo 2">
+    <img src="https://via.placeholder.com/300x200/000000/FFFFFF?text=Demo+3" alt="Demo 3">
+    <img src="https://via.placeholder.com/300x200/000000/FFFFFF?text=Demo+4" alt="Demo 4">
+    <img src="https://via.placeholder.com/300x200/000000/FFFFFF?text=Demo+5" alt="Demo 5">
+    <img src="https://via.placeholder.com/300x200/000000/FFFFFF?text=Demo+6" alt="Demo 6">
+    <img src="https://via.placeholder.com/300x200/000000/FFFFFF?text=Demo+7" alt="Demo 7">
+
+
+</div>
+
+ <!------------------- footer part  ------------>
+ <div class="footer">
+    <p id="ftext">Strike a Pose </p>
+    <div>
+        <div>
+            <p>Company</p>
+            <li>Blog
+            </li>
+            <li>About Us
+            </li>
+            <li>Contact Us</li>
+            <li>Cities</li>
+            
+        </div>
+        <div>
+            <p>Legal</p>
+            <li>Terms Of Service
+            </li>
+            <li>Privacy Policy
+            </li>
+            <li>Content Guidelines</li>
+            <li>Community Guidelines</li>
+            <li>3rd Party licenses</li>
+            
+        </div>
+    </div>
+    <hr>
+    <p>
+        Icons made by Freepik from www.flaticon.com And
+        </p>
+        <hr>
+        <p>
+            © Copyright 2023 Strike a Pose Technologies Pvt. Ltd. All rights reserved. | 
+            Terms Of Service | 
+            Privacy Policy
+            </p>
+</div>
+
+
+</body>
+
+</html>
+
+
+<script>
+    
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // You can add JavaScript functionality here if needed
+    });
+let navbar=document.querySelector(".nav")
+   
+   window.onscroll=function(){
+       navbar.classList.add("sticky");
+   }
+
+</script>
+
+<script src="../scripts/navbar.js"></script>
